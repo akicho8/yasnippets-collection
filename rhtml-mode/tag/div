@@ -1,0 +1,2 @@
+# --
+<%= content_tag(:div) $0%>

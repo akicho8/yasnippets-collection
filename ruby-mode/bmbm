@@ -1,0 +1,6 @@
+# --
+# -*- coding: utf-8 -*-
+require "benchmark"
+Benchmark.bmbm do |x|
+  x.report { $0 }
+end

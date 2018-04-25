@@ -1,0 +1,6 @@
+# name: GET
+# --
+it "${1:説明}" do
+  get $0:index
+  response.should be_success
+end

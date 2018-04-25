@@ -1,0 +1,4 @@
+# name: /admin/users/new (new)
+# key: url
+# --
+[:new, $0:admin, :${1:user}]

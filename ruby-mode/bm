@@ -1,0 +1,14 @@
+# --
+require 'active_support/core_ext/benchmark'
+p Benchmark.ms { $0 }
+
+require "active_support/core_ext/benchmark"
+def _; "%7.2f ms" % Benchmark.ms { 1000.times { yield } } end
+_ {                        } # => " 523.48 ms"
+
+require "benchmark/ips"
+Benchmark.ips do |x|
+  x.report("modulo") { 10.modulo(3) }
+  x.report("%")      { 10 % 3       }
+  x.compare!
+end

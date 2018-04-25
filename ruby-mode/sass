@@ -1,0 +1,3 @@
+# --
+require "sass"
+Sass::Engine.new("* { color: hsl(200, 50%, 50%) }", syntax: :scss, style: :compact).render # => "* { color: #4095bf; }\n"

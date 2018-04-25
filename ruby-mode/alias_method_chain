@@ -1,0 +1,5 @@
+# --
+alias_method_chain :original, :$0新機能
+def original_with_新機能
+  original_without_新機能
+end

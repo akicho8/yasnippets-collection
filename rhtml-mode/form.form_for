@@ -1,0 +1,8 @@
+# name: 通常フォーム form_for(@user, :url => [:admin, @user]){|form|}
+# key: form
+# --
+<%= form_for($0@user, :url => [:admin, @user], :html_options => {:class => "form-horizontal"}) do |form| %>
+  <%= form.error_messages %>
+  <%= form.text_field(:id) %>
+  <%= form.submit %>
+<% end %>

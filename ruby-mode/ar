@@ -1,0 +1,31 @@
+# --
+require "active_record"
+require "pp"
+
+ActiveRecord::VERSION::STRING   # =>
+
+# ActiveRecord::Base.logger = ActiveSupport::Logger.new(STDOUT)
+# ActiveSupport::LogSubscriber.colorize_logging = false
+# ActiveRecord::Migration.verbose = false
+
+ActiveRecord::Base.establish_connection(adapter: "sqlite3", database: ":memory:")
+
+# system("mysql -u root -e 'drop database if exists __test__; create database __test__'")
+# ActiveRecord::Base.establish_connection(adapter: "mysql2", host: "127.0.0.1", database: "__test__", username: "root")
+
+# ActiveRecord::Base.establish_connection(adapter: "mysql2", host: "127.0.0.1", username: "root")
+# ActiveRecord::Base.connection.recreate_database("__test__")
+# ActiveRecord::Base.establish_connection(ActiveRecord::Base.connection_config.merge(database: "__test__"))
+
+ActiveRecord::Schema.define do
+  create_table :users do |t|
+    t.string :name
+  end
+end
+
+class User < ActiveRecord::Base
+end
+
+p User.create!(name: "alice") # => #<User id: 1, name: "alice">
+
+# ActiveRecord::Base.connection.drop_database("__test__")

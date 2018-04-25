@@ -1,0 +1,4 @@
+# --
+<%= content_tag(:div, :class => "well") do %>
+$0
+<% end %>

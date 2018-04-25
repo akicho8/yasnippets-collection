@@ -1,0 +1,7 @@
+# name: $0
+# --
+if \$0 == __FILE__
+  $LOAD_PATH << ".."
+  require "tree_support"
+  $0
+end

@@ -1,0 +1,52 @@
+# name: acts_as_library のようなライブラリを作る場合の雛型
+# key: mod
+# --
+module ${1:`(string-inflection-camelize-function (file-name-nondirectory (file-name-sans-extension (buffer-file-name))))`}
+  extend ActiveSupport::Concern
+
+  included do
+  end
+
+  module ClassMethods
+    def ${1:$(downcase text)}(options = {})
+      return if ${1:$(downcase text)}_defined?
+
+      include SingletonMethods
+
+      class_attribute :${1:$(downcase text)}_configuration
+      self.${1:$(downcase text)}_configuration = {
+      }.merge(options)
+
+      if block_given?
+        yield ${1:$(downcase text)}_configuration
+      end
+
+      include Module.new.tap{|m|
+        m.instance_exec(${1:$(downcase text)}_configuration){|conf|
+          # define_method("#{conf[:name]}_at?") do
+          #   Time.current.to_i >= send("#{conf[:name]}_at").to_i
+          # end
+        }
+      }
+    end
+
+    def ${1:$(downcase text)}_defined?
+      ancestors.include?(SingletonMethods)
+    end
+  end
+
+  module SingletonMethods
+    extend ActiveSupport::Concern
+
+    included do
+    end
+
+    module ClassMethods
+      def ${1:$(downcase text)}?
+        ${1:$(downcase text)}_defined? # && columns_hash.has_key?(:id)
+      end
+    end
+  end
+end
+
+include $1

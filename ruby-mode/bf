@@ -1,0 +1,3 @@
+# --
+before_action :$0xxx, :yyy, :only => [:action1], :except => [:action2]
+before_action :deny_access, :except => :index, :if => proc{Rails.env.production?}

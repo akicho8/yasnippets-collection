@@ -1,0 +1,38 @@
+#name : cache3 - フラグメントキャッシュ(Level3)
+# --
+#  レベル3: フラグメントキャッシュ
+#   使い所: ビューの中の一部分だけをキャッシュしたい
+#     効用: index と show のアクションの結果(HTML自体)を保持するため二度目からアクションが呼ばれない
+#   注意点: アクションは必ず実行されるので fragment_exist? のチェックを入れて無いときだけ、これから作るキャッシュのためにインスタンスを準備すること
+#           tops#index のビューで cache(:controller => "tops", :action => "index") の省略系が cache なので
+#           複数ある場合は cache(:suffix => "case1") などとしてユニークにすること
+#           ここでの suffix というキーは controller/action/id 以外ならなんでもよく以下のように最後にくっつくだけ
+#           cache(:suffix => "bar")        #=> views%2Flocalhost%3A3000%2Findex1%3Fsuffix%3Dbar
+#           cache(:action_suffix => "foo") #=> views%2Flocalhost%3A3000%2Findex1%3Faction_suffix%3Dfoo
+#           cache("hoge")                  #=> views%2Fhoge
+#           cache()                        #=> views%2Flocalhost%3A3000%2Findex1
+#
+# 便利な技: cache(params, :expires_in => 30.minutes) # 30分間のキャッシュ(必ず expires_in は第二引数にすること！)
+#           cache({:controller => "articles", :action => "index"}, :expires_in => 30.minutes) # のように書いた方がいいかもしれない
+#
+# 削除方法: expire_fragment(:suffix => "case1")
+#           または ArticleSweeper を準備して
+#           cache_sweeper :article_sweeper
+#           とする
+#
+# cache_sweeper :article_sweeper
+# ArticleSweeper の中で after_(create/update/destroy) の中で expire_fragment(:suffix => "case1") を実行する
+
+def index
+  unless fragment_exist?(:suffix => "case1")
+    $0# @articles = Article.all
+    @articles = Time.now
+  end
+end
+
+# 以下を該当ビューに記述してください
+<% cache("migiue", :expires_in => 30.minutes) do %>
+<%# cache(params, :expires_in => 30.minutes) do %>
+<%# cache({:suffix => "case1"}, :expires_in => 30.minutes) do %>
+  <%= @articles.pretty_inspect %>
+<% end %>

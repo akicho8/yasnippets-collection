@@ -1,0 +1,5 @@
+# name: assert_emails
+# --
+lambda do
+  $0
+end.should change(ActionMailer::Base.deliveries, :size).by(1)

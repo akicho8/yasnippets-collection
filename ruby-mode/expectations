@@ -1,0 +1,7 @@
+# --
+require "rubygems"
+require "expectations"
+
+Expectations do
+# (yas/expand-link "expectations.expect")$0
+end

@@ -1,0 +1,2 @@
+# --
+link_to("あ", :title => "タイトル", "data-content" => "本文", :rel => "popover")

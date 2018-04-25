@@ -1,0 +1,2 @@
+# --
+FileUtils.rm_rf($0, :noop => true, :verbose => true)

@@ -1,0 +1,13 @@
+# name: func(:only => :x)
+# key: def
+# --
+def $0(options = {})
+  keys = [:foo, :bar, :baz]
+  if only = options[:only]
+    Array.wrap(only)
+  elsif except = options[:except]
+    keys - Array.wrap(except)
+  else
+    keys
+  end
+end

@@ -1,0 +1,6 @@
+# --
+describe("test_hello", () => {
+  it("Hello", () => {
+    expect("Hello").toEqual("Hello")
+  })
+})

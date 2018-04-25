@@ -1,0 +1,2 @@
+# --
+p ActiveRecord::Base.connection.select_value("select count(*) from ar_internal_metadata")

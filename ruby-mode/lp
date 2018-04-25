@@ -1,0 +1,4 @@
+# --
+ActiveRecord::Base.logger.level = ActiveSupport::Logger::DEBUG
+$0
+ActiveRecord::Base.logger.level = ActiveSupport::Logger::INFO

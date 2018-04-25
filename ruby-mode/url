@@ -1,0 +1,24 @@
+# --
+[User.new]                                          #=> /uesrs
+[@user, @comment]                                   #=> /uesrs/1/comments/1
+[                       :admin, User.new]           #=> /admin/uesrs
+polymorphic_path([:admin, :users], {:mode => 1})    #=> /admin/users?mode=1
+[:new,  :admin, :user]                              #=> /admin/uesrs/new
+[                       :admin, @user]              #=> /admin/uesrs/1
+[:edit,                 :admin, @user]              #=> /admin/uesrs/1/edit
+[                       :admin, @user, Comment.new] #=> /admin/users/1/comments
+[:delete_all            :admin, @user, Comment.new] #=> /admin/users/1/comments/delete_all
+[:new,                  :admin, @user, :comment]    #=> /admin/users/1/comments/new
+[:create_confirm, :new, :admin, @user, :comment]    #=> /admin/users/1/comments/new/create_confirm
+[                       :admin, @user, @comment]    #=> /admin/users/1/comments/1
+[:edit,                 :admin, @user, @comment]    #=> /admin/users/1/comments/1/edit
+[:update_confirm,       :admin, @user, @comment]    #=> /admin/users/1/comments/1/update_confirm
+
+[:create_confirm, :new, :admin, @user, :ship]            #=> /admin/users/1/ships/new/create_confirm
+[:create_confirm, :new, :admin, @user, @board, :comment] #=> /admin/users/1/boards/1/comments/new/create_confirm
+[:admin, @user, @board, Comment.new]                     #=> /admin/users/1/boards/1/comments
+
+polymorphic_path([:admin, :user], :id => record.id)        #=> /admin/users/1
+polymorphic_path([:edit, :admin, :user], :id => record.id) #=> /admin/users/1/edit
+
+[:post_index, :admin, @article, :users]       #=> /admin/articles/1/users/post_index

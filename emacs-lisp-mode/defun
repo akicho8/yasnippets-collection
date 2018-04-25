@@ -1,0 +1,6 @@
+# --
+(defun ${1:my-function} (arg)
+  "C-u M-x my-function だと arg が 4 になり、デフォルトだと 1"
+  (interactive "p")
+  (message "%S" arg))
+;; ($1 1)

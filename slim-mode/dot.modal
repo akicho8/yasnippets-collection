@@ -1,0 +1,17 @@
+# key: .modal
+# --
+- modal_id = "modal#{SecureRandom.hex}"
+= link_to("表示", "#", data: {toggle: "modal", target: "##{modal_id}", keyboard: "true"})
+
+.modal.fade id=modal_id
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        button.close[type="button" data-dismiss="modal"]
+          span== "&times;"
+        h4.modal-title= "タイトル"
+      .modal-body
+        = "本文"
+      .modal-footer
+        button.btn.btn-default[type="button" data-dismiss="modal"]= "閉じる"
+        = link_to("ボタン", "#", class: "btn btn-primary")

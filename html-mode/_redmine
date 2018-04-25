@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Title</title>
+    <link href="stylesheets/redmine.css" media="screen" rel="stylesheet" type="text/css" />
+  </head>
+  <body class="theme-Farend basic controller-issues action-index">
+    <div id="wrapper">
+      <div id="wrapper2">
+        <div id="top-menu">
+          <div id="account">
+            <ul>
+              <li><a href="/login" class="login">ログイン</a></li>
+              <li><a href="/account/register" class="register">登録する</a></li>
+            </ul>
+          </div>
+          <ul>
+            <li><a href="#">ホーム</a></li>
+          </ul>
+        </div>
+        <div id="header">
+          <h1>タイトル</h1>
+          <div id="main-menu">
+            <ul>
+              <li><a href="#" class="selected">概要1</a></li>
+              <li><a href="#">概要2</a></li>
+              <li><a href="#">概要3</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- サイドバー付きなら以下を有効にする -->
+        <!-- <div class="" id="main"> -->
+
+        <div class="nosidebar" id="main">
+
+          <!-- <div id="sidebar"> -->
+          <!--   <h3>サイドバー</h3> -->
+          <!--   <a href="#">サマリー1</a><br /> -->
+          <!--   <a href="#">サマリー2</a><br /> -->
+          <!--   <a href="#">サマリー3</a><br /> -->
+          <!-- </div> -->
+
+          <div id="content">
+            <h1>タイトル</h1>
+            <div class="box">
+              ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
+            </div>
+          </div>
+          <div style="clear:both;"></div>
+        </div>
+      </div>
+      <div id="footer">
+        <div class="bgl">
+          <div class="bgr">
+            Powered by <a href="http://www.redmine.org/">Redmine</a> &copy; 2006-2011 Jean-Philippe Lang
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,4 @@
+# --
+<%= content_tag(:div, :style => "text-align:center") do %>
+  $0
+<% end %>

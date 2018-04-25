@@ -1,0 +1,7 @@
+# --
+with_options(presence: true) do
+  validates :${1:foo}
+end
+with_options(allow_blank: true) do
+  validates :$1, uniqueness: true
+end

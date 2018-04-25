@@ -1,0 +1,17 @@
+# --
+$0<%= link_to("起動", "#main", "data-toggle" => "modal", :class => "btn btn-primary") %>
+<%= content_tag(:div, :id => "main", :class => "modal hide fade") do %>
+  <%= content_tag(:div, :class => "modal-header") do %>
+    <%= link_to("&times;", "", :class => "close", "data-dismiss" => "modal") %>
+    <%= content_tag(:h3, "div.modal-header h3") %>
+  <% end %>
+  <%= content_tag(:div, :class => "modal-body") do %>
+    <%= content_tag(:p, "div.modal-body p", :class => "") %>
+  <% end %>
+  <%= content_tag(:div, :class => "modal-footer") do %>
+    <%= content_tag(:p, "div.modal-footer p", :class => "") %>
+    <%= link_to("閉じる", "", :class => "close", "data-dismiss" => "modal") %>
+    <%= link_to("btn btn-primary", "", :class => "btn btn-primary") %>
+    <%= link_to("btn", "", :class => "btn") %>
+  <% end %>
+<% end %>

@@ -1,0 +1,16 @@
+# --
+require "active_support/core_ext/module/delegation"
+delegate :level, :to => :profile                      # x.level #=> 1; x.profile=nil; x.level #=> ERROR
+delegate :level, :to => :profile, :allow_nil => true  # x.level #=> 1; x.profile=nil; x.level #=> nil
+delegate :level, :to => :profile, :prefix => true     # x.profile_level #=> 1
+delegate :level, :to => :profile, :prefix => :prof    # x.prof_level    #=> 1
+delegate :debug, :to => "self.class.logger"           # x.debug は self.class.logger.debug を呼ぶ 
+
+require 'forwardable'
+class C
+  extend Forwardable
+  instance_delegate :foo => "Base.instance" # 複数ある場合はキーを配列にする
+
+  extend SingleForwardable
+  single_delegate :bar => :Base
+end

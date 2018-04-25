@@ -1,0 +1,2 @@
+# --
+order([arel_table[:$1updated_at].desc, arel_table[:id].desc])

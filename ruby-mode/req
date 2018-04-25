@@ -1,0 +1,2 @@
+# --
+require "${1:active_support/all}"

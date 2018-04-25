@@ -1,0 +1,5 @@
+# --
+.form-group
+  = form.label(:xxx, "$0ラベル名", class: "col-md-2 control-label")
+  .col-md-10
+    = form.text_field(:xxx, class: "form-control", value: "値")

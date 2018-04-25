@@ -1,0 +1,2 @@
+# --
+system("mysql -u root -e 'drop database if exists __test__; create database __test__'"); ActiveRecord::Base.establish_connection(:adapter => "mysql2", :host => "127.0.0.1", :username => "root", :password => "", :database => "__test__")

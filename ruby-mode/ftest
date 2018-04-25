@@ -1,0 +1,7 @@
+# name: functional test
+# --
+test "$1" do
+  get :${1:index}$0
+  assert_response :success
+  assert_template "$1"
+end

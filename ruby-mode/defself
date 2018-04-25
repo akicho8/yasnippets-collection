@@ -1,0 +1,4 @@
+# --
+def self.${1:run}(*args, &block)
+  $0new(*args, &block).$1
+end

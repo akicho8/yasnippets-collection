@@ -1,0 +1,51 @@
+# name: 全部入り
+# --
+it "${1:テストの説明}" do
+  @${2:article}.${3:foo}.should be_present
+
+  assigns(:invite).errors.should include(:subject, :body)
+  response.should render_template("new")
+
+  @$2.should have(1).errors_on(:tag_list)
+  @$2.errors.should be_has_key(:tag_list)
+
+  @$2.should have_at_least(2).entries # ？
+  lambda{Article.create!}.should change(Article, :count).by(1) # 差分
+  lambda{Article.create!}.should change(Article, :count).from(0).to(1)
+  lambda{Article.create!}.should change(Article, :count).to(1)
+  violated "必ず失敗させる"
+  pending("理由")
+
+  @$2.$3.should match(/^SELECT/)
+  @$2.$3.should include?(:bar => 1)
+  @$2.$3.should include("あいうえお")
+  @$2.$3.should be_true
+  @$2.$3.should be_false
+  @$2.$3.should be_empty
+  @$2.$3.should be_blank
+  @$2.$3.should be_valid
+  @$2.$3.should be_invalid
+  @$2.$3.should_not == 1
+  @$2.$3.should == 1
+  @$2.$3.should eq(1)
+  @$2.$3.should == true
+  proc{@$2.$3}.should change(ActionMailer::Base.deliveries, :size).by(1)
+
+  mail = Mailman.developper_notice(:subject => "(subject)", :body => "本文")
+  assert mail.body.encoded
+  lambda{mail.deliver}.should change(ActionMailer::Base.deliveries, :size).by(1)
+
+  mail.should be_delivered_from("alice@localhost")
+  mail.should be_delivered_to("alice@localhost")
+  mail.should have_subject("[あいうえお] (subject)")
+  mail.should have_body_text("本文")
+  mail.should have_header("Content-Type", "text/plain")
+
+  proc{1 / 0}.should raise_error(ZeroDivisionError)
+  proc{1 / 0}.should raise_error(ZeroDivisionError, "divided by 0")
+  proc{1 / 0}.should raise_error(ZeroDivisionError, /divided/)
+  proc{1 / 0}.should raise_error(ZeroDivisionError, /divided/){|error|error.var.should match(/./)}
+
+  {:get => "/"}.should route_to(:controller => "tops", :action => "index")
+  response.should be_success
+end

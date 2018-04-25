@@ -1,0 +1,8 @@
+# --
+context "1+1のテスト" do
+  shared_examples_for "add_check" do |a, b, result|
+    it { (a + b).should == result }
+  end
+  it_behaves_like "add_check", 1, 1, 2
+  it_behaves_like "add_check", 1, 2, 3
+end

@@ -1,0 +1,4 @@
+# --
+with_options(:blank_to_nil => true, :squish => true, :multi_byte => true) do |o|
+  o.normalize :${1:name}$0
+end

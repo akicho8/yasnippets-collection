@@ -1,0 +1,33 @@
+# --
+require "mongoid"
+
+Mongoid::Config.connect_to("test")
+Mongoid::Clients.default.database.drop
+Mongoid::Clients.default.collections.count # => 0
+
+class User
+  include Mongoid::Document
+
+  field :name, type: String
+  index({name: 1}, {unique: true})
+
+  has_one :profile
+  has_many :articles
+end
+
+class Profile
+  include Mongoid::Document
+  index({user: 1}, {unique: true})
+  belongs_to :user, :inverse_of => :profile
+end
+
+class Article
+  include Mongoid::Document
+  belongs_to :user, :inverse_of => :articles
+end
+
+Mongoid::Tasks::Database.create_indexes
+
+user = User.create!(:name => "alice") # => #<User _id: 554c7c52696b6532bc000000, name: "alice">
+profile = user.create_profile         # => #<Profile _id: 554c7c52696b6532bc010000, user_id: BSON::ObjectId('554c7c52696b6532bc000000')>
+article = user.articles.create!       # => #<Article _id: 554c7c52696b6532bc020000, user_id: BSON::ObjectId('554c7c52696b6532bc000000')>

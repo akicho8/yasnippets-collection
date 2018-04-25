@@ -1,0 +1,2 @@
+# --
+get "${1:about}", :to => "${2:articles}"$0 # $1_path

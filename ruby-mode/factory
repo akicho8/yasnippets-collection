@@ -1,0 +1,18 @@
+# --
+require "factory_girl"
+require "active_model"
+
+class Foo
+  include ActiveModel::Model
+  attr_accessor :name
+end
+
+FactoryGirl.define do
+  factory :foo do
+    name { "alice" }
+  end
+end
+
+FactoryGirl.build(:foo, name: "bob") # => #<Foo:0x007faf65046f20 @name="bob">
+FactoryGirl.create(:foo) rescue $! # => #<NoMethodError: undefined method `save!' for #<Foo:0x007faf65044860 @name="alice">>
+FactoryGirl.attributes_for(:foo)   # => {:name=>"alice"}

@@ -1,0 +1,4 @@
+# name: times.collect{|index|index}
+# key: each
+# --
+times.collect {|index| index}

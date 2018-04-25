@@ -1,0 +1,4 @@
+# --
+if Rails.env.production?
+  $0
+end

@@ -1,0 +1,7 @@
+# name: func(options = {})
+# key: def
+# --
+def $0(options = {})
+  options = {
+  }.merge(options)
+end

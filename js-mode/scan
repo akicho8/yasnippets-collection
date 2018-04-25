@@ -1,0 +1,4 @@
+# --
+XRegExp.forEach(e, XRegExp("(?<count>\\d+)"), (m, i) => {
+  m["count"]
+}

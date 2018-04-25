@@ -1,0 +1,8 @@
+# name: Snippet header
+# contributor: joaotavora
+# --
+# name: $1${2:
+# key: ${3:expand-key}}${4:
+# group: ${5:group}}
+# --
+$0

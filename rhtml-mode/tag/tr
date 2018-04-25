@@ -1,0 +1,4 @@
+# --
+<%= content_tag(:tr) do %>
+  $0
+<% end %>

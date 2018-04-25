@@ -1,0 +1,2 @@
+# --
+$0raise NotImplementedError, "#{__method__} is not implemented"

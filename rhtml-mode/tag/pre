@@ -1,0 +1,2 @@
+# --
+<%= content_tag(:pre, $0, :style => "font-family: monospace") %>

@@ -1,0 +1,2 @@
+# --
+$0<%= content_tag(:iframe, "", :src => "http://www.google.co.jp/", :frameborder => "0", :align => "center", :width => "80%", :height => "80%", :scrolling => "auto|yes|no") %>

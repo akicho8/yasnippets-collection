@@ -1,0 +1,50 @@
+# -*- coding: utf-8 -*-
+# --
+#
+# レポート
+#
+module Reportable
+  extend ActiveSupport::Concern
+
+  module ClassMethods
+    def info(options = {})
+      options = {
+        :notice => true,
+        :verbose => false,
+      }.merge(options)
+
+      rows = []
+      # scoped.each
+      find_each{|record|rows << record.info_hash}
+      body = RainTable.generate(rows){|options|
+        options[:select] = [
+          {:key => :id,                  :label => han(:id),                  :size => nil},
+          {:key => :created_at,          :label => han(:created_at),          :size => nil},
+          {:key => :updated_at,          :label => han(:updated_at),          :size => nil},
+        ]
+      }
+      if options[:notice]
+        if Object.const_defined?(:Mailman)
+          Mailman.delay.developper_notice(:subject => "#{model_name.human}レポート(#{rows.size})", :body => body)
+        end
+      end
+      if options[:verbose]
+        puts body
+      end
+      {:body => body, :rows => rows}
+    end
+  end
+
+  def info_hash
+    {
+      :id         => id,
+      :created_at => created_at,
+      :updated_at => updated_at,
+    }
+  end
+
+  def info
+    self.class.where(:id => id).info
+  end
+end
+include Reportable

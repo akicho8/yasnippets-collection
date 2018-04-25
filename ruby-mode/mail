@@ -1,0 +1,7 @@
+# --
+Mailman.developper_notice(:subject => "", :body => [Setting[:community_member_out_disable]].pretty_inspect).deliver
+Mailman.developper_notice(:subject => "#{error.message} (#{error.class.name})", :body => [$0error, caller].pretty_inspect).deliver
+Mailman.developper_notice(:subject => "#{self.class.name}##{__method__}", :body => "").deliver
+ExceptionNotifier::Notifier.background_exception_notification(error, :name => "#{error.message} (#{error.class.name})", :data => {:errors => error.record.errors.pretty_inspect, :params => params.pretty_inspect}, :files => [Rails.root.join("public/images/rails.png")]).deliver
+ExceptionNotifier.with(:name => "#{self.class.name}##{__method__}", :data => {:options => options}) do
+end

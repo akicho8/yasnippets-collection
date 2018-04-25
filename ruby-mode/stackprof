@@ -1,0 +1,16 @@
+# --
+require "stackprof"
+
+StackProf.run(mode: :wall, out: "stackprof.dump", raw: true) do
+  1.times do
+    info = Parser.parse_file("katomomo.ki2")
+    info.to_ki2
+    info.to_kif
+    info.to_csa
+  end
+end
+
+system "stackprof stackprof.dump"
+system "stackprof stackprof.dump --method Warabi::Parser::Ki2Parser#parse"
+system "stackprof --flamegraph stackprof.dump > flamegraph"
+system "stackprof --flamegraph-viewer=flamegraph"

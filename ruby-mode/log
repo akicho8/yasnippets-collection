@@ -1,0 +1,10 @@
+# --
+require "active_support/all"
+require "fileutils"
+ActiveRecord::Base.logger = ActiveSupport::Logger.new(STDOUT)
+ActiveRecord::Base.logger = nil
+ActiveSupport::LogSubscriber.colorize_logging = false
+ActiveRecord::Base.logger = ActiveSupport::Logger.new(File.expand_path(File.join(File.dirname(__FILE__), "log/development.log")))
+ActiveRecord::Base.logger.debug("OK")
+ActiveRecord::Base.logger.silence(ActiveSupport::Logger::DEBUG) do
+end

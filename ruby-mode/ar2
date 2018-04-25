@@ -1,0 +1,33 @@
+# --
+# -*- coding: utf-8 -*-
+require "active_record"
+
+ActiveRecord::Base.logger = ActiveSupport::Logger.new(STDOUT)
+ActiveSupport::LogSubscriber.colorize_logging = false
+ActiveRecord::Migration.verbose = false
+
+ActiveRecord::Base.establish_connection(adapter: "sqlite3", database: ":memory:")
+ActiveRecord::Schema.define do
+  create_table :users do |t|
+    t.string :name
+  end
+  create_table :articles do |t|
+    t.belongs_to :user
+    t.string :name
+    t.integer :price
+  end
+end
+
+class User < ActiveRecord::Base
+  has_many :articles, dependent: :destroy
+end
+
+class Article < ActiveRecord::Base
+  belongs_to :user
+end
+
+user = User.create!
+user.articles.create!
+user.articles.create!
+
+p User.joins(:articles)

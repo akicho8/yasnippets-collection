@@ -1,0 +1,14 @@
+# name: コントローラのアクション用
+# --
+it "説明" do
+  proc{
+    post :create, :article => Factory.attributes_for(:article, :email => controller.current_user.email)
+  }.should change(ActionMailer::Base.deliveries, :size).by(1)
+  response.should be_success
+  response.should be_redirect
+  response.should redirect_to [:new, :admin, :article]
+  response.should render_template("new")
+  assigns(:article).errors.should == {}
+  assigns(:article).errors.should include(:email, :body)
+  assigns(:article).errors.keys.should == [:email, :body]
+end

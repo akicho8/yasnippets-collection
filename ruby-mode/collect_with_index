@@ -1,0 +1,3 @@
+# --
+each.with_index.collect{|(k, v), i|$0}
+each.with_index.collect{|v, i|}

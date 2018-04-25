@@ -1,0 +1,9 @@
+# --
+class Foo
+  include ApplicationStaticRecord
+  static_record [
+    {:key => :time_future, :name => "待機",   },
+    {:key => :time_active, :name => "期間中", },
+    {:key => :time_past,   :name => "終了",   },
+  ], :attr_reader_auto => true
+end

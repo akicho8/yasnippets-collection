@@ -1,0 +1,6 @@
+# --
+after_validation do
+  if errors.present?
+    Mailman.developper_notice(:subject => "#{self.class.model_name.human} #{errors.full_messages}", :body => [errors.full_messages, attributes].pretty_inspect).deliver
+  end
+end

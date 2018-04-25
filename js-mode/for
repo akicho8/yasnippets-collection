@@ -1,0 +1,13 @@
+# --
+# 基本
+items.forEach((e) => {})
+items.forEach((e, i) => {})
+
+# Map
+map.forEach((v, k) => { })                  # なお 3 つ目は map 自体(使いにくい)
+Array.from(map).forEach(([k, v, i]) => { }) # 本当に欲かったもの
+
+# 非推奨
+for (const [k, v] of map) {}
+for (const item of items) {}
+for (var k in {a: 1, b: 2}) {}

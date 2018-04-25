@@ -1,0 +1,14 @@
+# --
+require "rspec/autorun"
+RSpec.configure do |config|
+  config.expect_with :rspec do |expectations|
+    expectations.syntax = [:should, :expect]
+  end
+    config.expect_with :test_unit
+end
+
+RSpec.describe do
+  it do
+    assert true
+  end
+end

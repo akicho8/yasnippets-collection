@@ -1,0 +1,10 @@
+# name: concern
+# key: mod
+# --
+concern :$0 do
+  included do
+  end
+
+  class_methods do
+  end
+end

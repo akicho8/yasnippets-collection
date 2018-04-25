@@ -1,0 +1,3 @@
+# name: :method => ""
+# --
+:method => :${1:$$(yas-choose-value '("get" "post" "put" "delete"))}

@@ -1,0 +1,5 @@
+# name: def func
+# key: def
+# --
+def $0
+end

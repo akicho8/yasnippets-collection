@@ -1,0 +1,4 @@
+# --
+before_action do
+  $0
+end

@@ -1,0 +1,4 @@
+# --
+setup do
+  $0
+end

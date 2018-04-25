@@ -1,0 +1,4 @@
+# name: Pathname
+# key: path
+# --
+Pathname(__FILE__).dirname.join("$0").expand_path

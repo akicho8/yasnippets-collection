@@ -1,0 +1,31 @@
+# --
+<% content_for(:jquery_inline) do %>
+  $("#advanced_search_trigger").click(function(){
+    $("#advanced_search").lightbox_me({
+      centered: true,
+      overlayCSS: {background: "black", opacity: 0.8},
+      overlaySpeed: 125,
+      lightboxSpeed: 150,
+    });
+  });
+  $("#advanced_search input:submit").button();
+  $("#advanced_search .box").corner("effect corners width:8px");
+  $("#advanced_search .date input:text").datepicker();
+  $("#main").show("pulsate", {times: 9999}, 1000);
+  $("#main").show("shake");
+  $("#main").progressbar({value: 60});
+  $("#main").slider({value: 60});
+  $("#main").peity("line");
+  $("#main").peity("bar");
+  $("#main").peity("pie");
+  $("#main").css("opacity", 0.5);
+  $("#main").corner("effect corners width:8px");
+  $.jqplot("main", [[[0, 1], [1, 2], [2, 4], [3, 8]]]);
+  $(".pics").cycle({fx: "fade", timeout: 1000, speed: 1000});
+  $("#box").resizable();
+  $("#main").autocomplete({source: ["ruby", "Rails"]});
+  $(":input").datetimepicker();
+  $("#main").dialog();
+  $("#main").button);
+  $("#main").buttonset();
+<% end %>

@@ -1,0 +1,24 @@
+# --
+rows = [
+  {:id => 1, :name => "alice", :description => "0123456789"},
+  {:id => 2, :name => "bob",   :description => "あいうえお"},
+  {:id => 3, :name => "bob",   :description => "儚い夢"},
+]
+select_columns = [
+  {:key => :id,          :label => "ID",   :size => nil},
+  {:key => :name,        :label => "名前", :size => nil},
+  {:key => :description, :label => "説明", :size => 8},
+]
+
+puts SimpleTable.generate(rows, :select_columns => select_columns, :sort_by => proc{|row|-row[:id]})
+puts SimpleTable.generate(rows, :select_columns => select_columns, :sort_by => :id)
+puts SimpleTable.generate(rows, :select_columns => select_columns, :sort_by => :id, :header => false)
+puts SimpleTable.generate([])
+puts SimpleTable.generate(rows)
+
+rows = [
+  {:label => "A", :value => 1},
+  {:label => "B", :value => 2},
+]
+select_columns = [{:key => :label}, {:key => :value}]
+puts SimpleTable.generate(rows, :select_columns => select_columns, :header => false)

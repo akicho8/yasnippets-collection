@@ -1,0 +1,15 @@
+# name: ActiveSupport::Concern
+# key: mod
+# --
+module ${1:`(string-inflection-camelize-function (file-name-nondirectory (file-name-sans-extension (buffer-file-name))))`}
+  extend ActiveSupport::Concern
+
+  included do
+  end
+
+  class_methods do
+  end
+
+  $0
+end
+include $1

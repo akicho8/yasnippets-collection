@@ -1,0 +1,30 @@
+# --
+<input type="text" class="" placeholder="text" />
+
+<input type="datetime" class="" placeholder="datetime" />
+<input type="datetime-local" class="" placeholder="datetime-local" />
+<input type="month" class="" placeholder="month" />
+<input type="week" class="" placeholder="week" />
+<input type="time" class="" placeholder="time" />
+<input type="number" class="" placeholder="number" />
+<input type="range" class="" placeholder="range" />
+<input type="search" class="" placeholder="search" />
+<input type="tel" class="" placeholder="tel" />
+<input type="url" class="" placeholder="url" />
+<input type="email" class="" placeholder="email" />
+<input type="color" class="" placeholder="color" />
+
+<label for="c1" class="checkbox"><input id="c1" type="checkbox" checked="checked" />A</label>
+<label for="c2" class="checkbox"><input id="c1" type="checkbox" checked="checked" />B</label>
+<label for="c3" class="checkbox"><input id="c1" type="checkbox" checked="checked" />C</label>
+
+<label for="r1" class="radio"><input id="r1" type="radio" checked="checked" name="g1"/>A</label>
+<label for="r2" class="radio"><input id="r2" type="radio" checked="checked" name="g1"/>B</label>
+<label for="r3" class="radio"><input id="r3" type="radio" checked="checked" name="g1"/>C</label>
+
+<textarea id="body" placeholder="textarea"></textarea>
+
+<select name="prefecture">
+  <option value="1">東京</option>
+  <option value="2">岡山</option>
+</select>

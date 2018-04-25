@@ -1,0 +1,9 @@
+# --
+$stdin = DATA
+a = gets.to_i
+b, c = gets.split(/\s+/).collect(&:to_i)
+puts
+__END__
+1
+2 3
+

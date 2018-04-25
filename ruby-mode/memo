@@ -1,0 +1,7 @@
+# --
+def foo
+  if @foo.nil?
+    @foo = Setting[:foo]
+  end
+  @foo
+end

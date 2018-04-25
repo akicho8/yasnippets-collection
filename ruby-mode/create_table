@@ -1,0 +1,19 @@
+# --
+create_table :articles do |t|
+  t.string :login
+  t.string :salt
+  t.string :salted_password
+
+  t.string :title
+  t.string :subject
+  t.string :full_name
+  t.string :access_token
+  t.text :body
+  t.boolean :public_flag
+  t.datetime :expire_at
+
+  t.decimal :latitude, :precision => 18, :scale => 12
+  t.decimal :longitude, :precision => 18, :scale => 12
+
+  t.timestamps
+end

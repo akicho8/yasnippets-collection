@@ -1,0 +1,8 @@
+# --
+$stdin = DATA
+
+while s = gets
+  p s.scan(/\d+/).collect(&:to_i)
+end
+
+__END__

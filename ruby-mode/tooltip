@@ -1,0 +1,2 @@
+# --
+link_to("あ", :title => "内容", :rel => "tooltip")

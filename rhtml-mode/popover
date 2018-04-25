@@ -1,0 +1,2 @@
+# --
+link_to("$0", :title => "タイトル", "data-content" => "本文", :rel => "popover") # $("[rel=popover]").popover() を coffee に追加しておくこと

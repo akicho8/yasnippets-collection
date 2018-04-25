@@ -1,0 +1,3 @@
+# --
+<% if !Rails.env.production? && Socket.gethostname.in?(["ikeda-mac.local"]) %>
+<% end %>

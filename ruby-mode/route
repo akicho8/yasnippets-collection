@@ -1,0 +1,33 @@
+# --
+require "action_controller/railtie"
+require "active_record"
+require "action_dispatch/routing/inspector"
+
+# ActiveRecord::Base.establish_connection(adapter: "sqlite3", database: ":memory:")
+# ActiveRecord::Migration.verbose = false
+# ActiveRecord::Schema.define do
+#   create_table :users do |t|
+#   end
+# end
+# 
+# class User < ActiveRecord::Base
+# end
+# user = User.create!
+
+app = Class.new(Rails::Application)
+app.routes.draw do
+  resources :users, :only => :index do
+    resources :blogs, :only => :index, :module => "users"
+  end
+end
+
+include Rails.application.routes.url_helpers
+# default_url_options.update(:host => "example.net")
+
+# polymorphic_path(user) # => 
+url_for([:user, :blogs, :user_id => 1, :only_path => true]) # => "/users/1/blogs"
+
+puts ActionDispatch::Routing::RoutesInspector.new(Rails.application.routes.routes).format(ActionDispatch::Routing::ConsoleFormatter.new)
+# >>     Prefix Verb URI Pattern                     Controller#Action
+# >> user_blogs GET  /users/:user_id/blogs(.:format) users/blogs#index
+# >>      users GET  /users(.:format)                users#index

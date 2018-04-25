@@ -1,0 +1,5 @@
+# --
+require "pathname"
+Pathname.glob(Pathname("~/Mail/**/*").expand_path) do |file|
+  $0p file
+end

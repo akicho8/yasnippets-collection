@@ -1,0 +1,16 @@
+# --
+# -*- coding: utf-8 -*-
+require "observer"
+class Player
+  include Observable
+  def initialize
+    add_observer(self, :update)
+  end
+  def notify
+    changed
+    notify_observers(self)
+  end
+  def update(player)
+    player
+  end
+end

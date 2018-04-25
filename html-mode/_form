@@ -1,0 +1,21 @@
+# --
+$0<form action="#" id="form1" class="form1">
+  <fieldset>
+    <legend>コンタクトフォーム</legend>
+    <p>
+      <label for="text_fiel1">題名</label><br />
+      <input type="text" name="subject" id="text_fiel1" />
+    </p>
+    <p>
+      <label for="textarea1">本文</label><br />
+      <textarea id="textarea1"></textarea>
+    </p>
+    <p>
+      <input type="checkbox" name="subject" id="checkbox1" />
+      <label for="checkbox1">同意する</label>
+    </p>
+  </fieldset>
+  <p>
+    <input type="submit" value="送信" />
+  </p>
+</form>

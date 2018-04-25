@@ -1,0 +1,3 @@
+# --
+= field_set_tag("legendの内容") do
+  $0

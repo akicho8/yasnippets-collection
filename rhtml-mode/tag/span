@@ -1,0 +1,2 @@
+# --
+<%= content_tag(:span, "$0") %>

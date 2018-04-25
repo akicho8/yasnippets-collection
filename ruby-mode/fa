@@ -1,0 +1,14 @@
+# --
+# FactoryGirl.create(:${1:article})
+FactoryGirl.define do
+  factory :$1 do
+    sequence(:id){|i|i}
+    sequence(:unique_code){|i|i}
+    # after(:stub)   { |article| article.code || 0 }
+    after(:build)  {|article|
+      article.code ||= 0
+      article.name ||= SecureRandom.hex
+    }
+    # after(:create)   { |article| article.code || 0 }
+  end
+end

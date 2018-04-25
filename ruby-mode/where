@@ -1,0 +1,2 @@
+# --
+where(arel_table[:$0name].eq("foo"))

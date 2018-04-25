@@ -1,0 +1,9 @@
+# --
+has_many :${1:articles}, :dependent => :${2:$$(yas/choose-value '("destroy" "nullify", "restrict"))}, :through => :favorites
+# t.integer :articles_count を定義しておくこと
+
+has_many :sub_communities, :class_name => name, :foreign_key => :parent_id, :dependent => :destroy # 子連合軍(複数)
+
+has_many :inviteships, :dependent => :destroy                               # この連合軍への招待情報
+has_many :x_invite_owners, :through => :inviteships, :source => :from_owner # この連合軍に招待しようとしている人たち
+has_many :y_invite_owners, :through => :inviteships, :source => :to_owner   # この連合軍に招待されようとしている人たち

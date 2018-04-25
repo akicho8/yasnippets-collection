@@ -1,0 +1,10 @@
+# --
+独立
+<%= link_to("編集", :class => "btn", "data-toggle="button") %>
+
+グループのグループ化するには div.btn-toolbar で囲む
+<%= content_tag(:div, :class => "btn-group", "data-toggle" => "buttons-checkbox") do %><%# or buttons-radio %>
+  <%= link_to("a", "#", :class => "btn") %>
+  <%= link_to("b", "#", :class => "btn") %>
+  <%= link_to("c", "#", :class => "btn") %>
+</div>

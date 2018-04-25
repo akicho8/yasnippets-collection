@@ -1,0 +1,4 @@
+# --
+<% content_for(:css_inline) do %>
+  $0
+<% end %>

@@ -1,0 +1,8 @@
+# name: include Module.new で奥に(superが使えるように)定義する
+# key: mod
+# --
+include Module.new.tap{|m|
+  m.instance_exec(options) do |options|
+    $0
+  end
+}

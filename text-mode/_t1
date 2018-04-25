@@ -1,0 +1,5 @@
+# name: 入力した文字列と同じ長さの横線を引く
+# --
+${1:$(make-string (string-width text) ?\=)}
+${1:Title}
+${1:$(make-string (string-width text) ?\=)}

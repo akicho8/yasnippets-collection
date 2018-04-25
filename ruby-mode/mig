@@ -1,0 +1,54 @@
+# --
+$0class ${1:`(string-inflection-camelize-function (replace-regexp-in-string "^[0-9]+_" "" (file-name-nondirectory (file-name-sans-extension (buffer-file-name)))))`} < ActiveRecord::Migration
+  def self.up
+    # テーブル作成
+    create_table :articles do |t|
+      t.string :login
+      t.string :salt
+      t.string :salted_password
+
+      t.string :title
+      t.string :subject
+      t.string :full_name
+      t.string :access_token
+      t.text :body
+      t.boolean :public_flag
+      t.datetime :expire_at
+
+      t.decimal :latitude, :precision => 18, :scale => 12
+      t.decimal :longitude, :precision => 18, :scale => 12
+
+      t.timestamps
+    end
+
+    # レコード毎に before_validation で設定されるトークンの追加
+    add_column :articles, :access_token, :string unless Article.column_names.include?("access_token")
+    add_index :articles, :access_token, :unique => true
+    Article.reset_column_information
+    say_with_time("Article Update") do
+      Article.find_each(:batch_size => 50) do |record|
+        if record.save
+          p [record.id, "ok", record.access_token]
+        else
+          p [record.id, record.errors]
+        end
+      end
+    end
+
+    # 初期値 false のフラグ追加
+    add_column :articles, :public_flag, :boolean unless Article.column_names.include?("public_flag")
+    add_index :articles, :public_flag
+    Article.reset_column_information
+    Article.update_all({:public_flag => false}, {:public_flag => nil})
+  end
+
+  def self.down
+    drop_table :articles if connection.table_exists?(:articles)
+
+    remove_index :articles, :public_flag
+    remove_column :articles, :access_token
+
+    remove_index :articles, :access_token
+    remove_column :articles, :public_flag
+  end
+end

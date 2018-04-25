@@ -1,0 +1,2 @@
+# --
+tp ActiveRecord::Base.connection.select_all("select * from ar_internal_metadata").collect(&:to_h)

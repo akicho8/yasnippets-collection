@@ -1,0 +1,13 @@
+# name: initialize(params, options = {}) {|obj| ... }
+# key: def
+# --
+def initialize(params, options = {}, &block)
+  @params = params
+  @options = {
+    :trace => false,
+  }.merge(options)
+  if block_given?
+    yield self
+  end
+  $0
+end

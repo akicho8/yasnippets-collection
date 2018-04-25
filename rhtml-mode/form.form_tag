@@ -1,0 +1,7 @@
+# name: 検索用一行フォーム
+# key: form
+# --
+<% form_tag([:admin, :$0users], :method => :get, :class => "form-inline") do %>
+  <%= search_field_tag(:q, params[:q]) %>
+  <%= submit_tag("検索", :name => nil) %>
+<% end %>

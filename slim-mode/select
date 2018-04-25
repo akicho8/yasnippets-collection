@@ -1,0 +1,12 @@
+# --
+/ 新しい方法
+.form-group
+  = form.label(:xxx, "ラベル名", class: "col-md-2 control-label")
+  .col-md-10
+    = form.collection_select(:xxx, [:foo, :bar].inject({}) { |a, e| a.merge(e.to_s.titleize => e) }, :last, :first, {include_blank: true}, {class: "form-control"})
+
+/ 古い方法
+.form-group
+  = form.label(:xxx, "ラベル名", class: "col-md-2 control-label")
+  .col-md-10
+    = form.select(:xxx, options_for_select(['alice', 'bob', 'carol']), {include_blank: true}, {class: 'form-control'})

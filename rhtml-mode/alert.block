@@ -1,0 +1,15 @@
+# name: ブロック付き
+# key: alert
+# --
+<%= content_tag(:div, :class => "alert alert-block ${1:$$(yas-choose-value '("" "alert-info" "alert-success" "alert-error"))}") do %>
+  <%= link_to("&times;".html_safe, "#", :class => "close", "data-dismiss" => "alert") %>
+  <%= content_tag(:h4, "エラーが発生しました", :class => "alert-heading") %>
+  ${2:ここにメッセージ書けばいいんじゃない？}
+  <%= content_tag(:ul) do %>
+    <%= content_tag(:li, "a") %>
+  <%- end -%>
+  <%= content_tag(:p) do %>
+    <%= link_to("送信", "#", :class => "btn btn-small") %>
+    <%= link_to("キャンセル", "#", :class => "btn btn-small") %>
+  <% end %>
+<% end %>

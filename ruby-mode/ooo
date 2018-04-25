@@ -1,0 +1,4 @@
+# --
+options = {
+  $0verbose: false,
+}.merge(options)

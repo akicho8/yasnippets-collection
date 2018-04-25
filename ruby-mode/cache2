@@ -1,0 +1,17 @@
+#name : cache2 - アクションキャッシュ(Level2)
+# --
+#  レベル2: アクションキャッシュ
+#   使い所: before_action で認証したあとでキャッシュを表示したい
+#     効用: index と show のアクションの結果(HTML自体)を保持するため二度目からアクションに処理が行かない
+#   注意点: caches_action は before_action より後に指定すること
+# 削除方法: 1. キャッシュを更新するため create update destroy の処理の後に以下の処理を入れること
+#              expire_action :action => [:index, :show]
+#           2. または article_sweeper の中で after_(create/update/destroy) の中で
+#              expire_action :controller => "articles", :action => "index"
+#              expire_action :controller => "articles", :action => "show", :id => article.id
+#              を実行する
+#           3. :expires_in => 30.minutes を指定しておけば楽ちん
+# オプション: :if, :unless, :cache_path => {:xxx => 1}, :expires_in => 30.minutes
+#
+caches_action :index, :show, # :cache_path => {:xxx => 1}, :expires_in => 30.minutes
+cache_sweeper :article_sweeper

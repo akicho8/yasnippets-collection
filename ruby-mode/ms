@@ -1,0 +1,5 @@
+# --
+ms = Benchmark.ms do
+  $0
+end
+ms_str = "%.1f ms" % ms

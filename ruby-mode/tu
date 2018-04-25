@@ -1,0 +1,77 @@
+# -*- coding: utf-8 -*-
+require "test/unit"
+
+require "active_support/testing/assertions"
+class Test::Unit::TestCase
+  include ActiveSupport::Testing::Assertions
+end
+
+Test::Unit.at_start { p :at_start }
+Test::Unit.at_exit { p :at_exit }
+
+# Rails用
+require "test_helper"
+# Rails Model
+class FooTest < ActiveSupport::TestCase
+end
+# Rails Controller
+class FoosControllerTest < ActionController::TestCase
+end
+
+# 基本
+class TestFoo < Test::Unit::TestCase
+  class << self
+    def startup
+    end
+    def shutdown
+    end
+  end
+  setup do
+  end
+  teardown do
+  end
+  test :a do
+  end
+end
+
+class TestFoo < Test::Unit::TestCase
+  test "foo" do
+    $0
+    # よく使う
+    assert_equal 1, 1
+    assert 1
+    assert_nil nil
+    assert_kind_of Numeric, 1
+    assert_nothing_raised { 1 / 1 }
+    assert_raise(StandardError.new("foo")) { raise StandardError, "foo" }
+    # flunk
+
+    # たまに使うかも？
+    assert_boolean true
+    assert_true true
+    assert_false false
+    assert_block { 1 }
+
+    # あまり使わない
+    refute nil
+    assert_raise_kind_of(ZeroDivisionError) { 1 / 0 }
+    assert_instance_of String, ""
+    assert_respond_to "", :size
+    assert_match /b/, "abc"
+    assert_same 0, 0            # a.equal?(b)
+    assert_operator 0, :==, 0
+    assert_throw(:a) { throw :a } # 逆は assert_nothing_thrown
+    assert_in_delta 0.00001, 0.00002
+    assert_in_epsilon(10000.0, 10001.0)
+    assert_send ["a", :size]
+    assert_compare 0, "<", 1
+    assert_fail_assertion {assert_equal("A", "B")}
+    assert_raise_message(/divided/) { 1 / 0 }
+    assert_const_defined Test, :Unit
+    assert_predicate [], :empty?
+    assert_alias_method([], :length, :size)
+    assert_path_exist("/tmp")
+    assert_include [1,2,3], 2
+    assert_empty []
+  end
+end

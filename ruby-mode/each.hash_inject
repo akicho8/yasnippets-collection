@@ -1,0 +1,4 @@
+# name: inject({}){|h, (k, v)|h.merge(k => v)}
+# key: each
+# --
+inject({}) {|h, (k, v)| h.merge(k => v)}

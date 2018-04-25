@@ -1,0 +1,2 @@
+# --
+FileUtils.makedirs(Pathname($0).expand_path.dirname)

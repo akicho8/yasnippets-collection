@@ -1,0 +1,4 @@
+# --
+<%= content_tag(:div, :class => "clearfix") do %>
+  $0
+<% end %>

@@ -1,0 +1,4 @@
+# name: 埋め込み用一行フォーム
+# key: form
+# --
+form_tag([:admin, :$0users], :method => :post, :style => "display:inline-block"){text_field_tag(:q, params[:q], :style => "width:3em") + submit_tag("+", :name => nil)}

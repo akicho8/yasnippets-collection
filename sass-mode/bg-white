@@ -1,0 +1,8 @@
+# name: 白い文字の下に置く白っぽい下地
+# --
+/* border: 1px solid rgba(255,255,255,0.1)
+-webkit-border-radius: 6px
+/* -webkit-box-shadow: 0 0 8px rgba(255,255,255,0.1)
+background: rgba(255,255,255,0.1)
+text-align: left
+padding: 10px 15px

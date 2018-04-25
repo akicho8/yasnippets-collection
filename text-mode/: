@@ -1,0 +1,11 @@
+# --
+`(yas-choose-value '(
+"[chore]"
+"[refactor]"
+"[fix]"
+"[feat]"
+"[docs][ci skip] Update README"
+"[style]"
+"[test]"
+"[perf]"
+))` $0

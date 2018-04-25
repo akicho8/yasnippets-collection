@@ -1,0 +1,5 @@
+# --
+  expect $1 do
+    $0
+  end
+  # (yas/expand-link "expectations.expect")

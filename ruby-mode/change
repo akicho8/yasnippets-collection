@@ -1,0 +1,4 @@
+# --
+expect {
+  $0
+}.to change { }.by(1)

@@ -1,0 +1,33 @@
+# --
+# ArticlesController に以下を追加してください
+#  caches_page :index, :show
+#  cache_sweeper :article_sweeper
+#
+class ArticleSweeper < ActionController::Caching::Sweeper
+  observe Article
+
+  def after_create(article)
+    gc_cache(article)
+  end
+
+  def after_update(article)
+    gc_cache(article)
+  end
+
+  def after_destroy(article)
+    gc_cache(article)
+  end
+
+  private
+  def gc_cache(article)
+    # public/* から削除
+    expire_page :action => [:index, :show]
+
+    # tmp/caches/* から削除
+    expire_action :action => :index
+    expire_action :action => :show, :id => article.id
+
+    # tmp/caches/* から cache("migiue") を削除
+    expire_fragment :migiue
+  end
+end

@@ -1,0 +1,110 @@
+# --
+form.form-horizontal
+  / テキストフィールド
+  .form-group
+    label.col-md-2.control-label[for="input_1"]= "text_field"
+    .col-md-10
+      input#input_1.form-control[type="text"]
+
+  / テキストエリア
+  .form-group
+    label.col-md-2.control-label[for="input_1a"]= "text_area"
+    .col-md-10
+      textarea#input_1a.form-control
+
+  / ヘルプ
+  .form-group
+    label.col-md-2.control-label= "ヘルプ"
+    .col-md-10
+      input.form-control[type="text"]
+      .help-block= "コメント"
+
+  / 横並びチェックボックス
+  .form-group
+    label.col-md-2.control-label= "check_box 横"
+    .col-md-10
+      label.checkbox-inline
+        input[type="checkbox" value="a"]= "A"
+      label.checkbox-inline
+          input[type="checkbox" value="a"]= "B"
+
+  / 縦並びチェックボックス
+  .form-group
+    label.col-md-2.control-label= "check_box 縦"
+    .col-md-10
+      .checkbox
+        label
+          input[type="checkbox" value="a"]= "A"
+      .checkbox
+        label
+          input[type="checkbox" value="a"]= "B"
+
+  / 1ビット型チェックボックス
+  / ラベルクリックだけでもトグルできるようにするのが親切
+  / また 「.checkbox → label」の方法でも 「label.checkbox-inline」の方法でも見た目は同じなので
+  / label.checkbox-inline の方法で他と共通化するのがいいかもしれない。
+  .form-group
+    label.col-md-2.control-label[for="input_2"]= "boolean 横"
+    .col-md-10
+      label.checkbox-inline
+        input#input_2[type="checkbox" value="a"]= "許可"
+
+  / この方法でも見た目は同じ
+  .form-group
+    label.col-md-2.control-label[for="input_3"]= "boolean 縦"
+    .col-md-10
+      .checkbox
+        label
+          input#input_3[type="checkbox" value="a"]= "許可"
+
+  / 横並びラジオボタン
+  .form-group
+    label.col-md-2.control-label= "radio_button 横"
+    .col-md-10
+      label.radio-inline
+        input[type="radio" name="group2" value="a"]= "A"
+      label.radio-inline
+        input[type="radio" name="group2" value="a"]= "B"
+
+  / 縦並びラジオボタン
+  .form-group
+    label.col-md-2.control-label= "radio_button 縦"
+    .col-md-10
+      .radio
+        label
+          input[type="radio" name="group1" value="a"]= "A"
+      .radio
+        label
+          input[type="radio" name="group1" value="a"]= "B"
+
+  / セレクトボックス
+  .form-group
+    label.col-md-2.control-label[for="input_3"]= "選択"
+    .col-md-10
+      select#input_3.form-control
+        option= "1"
+        option= "2"
+        option= "3"
+
+  / フォームの代わりにテキスト
+  .form-group
+    label.col-md-2.control-label= "text_field"
+    .col-md-10
+      p.form-control-static= "フォームの代わりのテキスト"
+
+  / disabled
+  .form-group
+    label.col-md-2.control-label= "disabled"
+    .col-md-10
+      input.form-control[type="text" disabled]
+
+  / readonly
+  .form-group
+    label.col-md-2.control-label= "readonly"
+    .col-md-10
+      input.form-control[type="text" readonly]
+
+  / submitボタン
+  .form-group
+    .col-md-offset-2.col-md-10
+      button.btn.btn-default[type="submit"]= "送信"

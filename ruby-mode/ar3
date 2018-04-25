@@ -1,0 +1,52 @@
+# --
+require "rubygems"
+require "active_record"
+
+ActiveRecord::Base.logger = ActiveSupport::Logger.new(STDOUT)
+ActiveSupport::LogSubscriber.colorize_logging = false
+ActiveRecord::Migration.verbose = false
+
+ActiveRecord::Base.establish_connection(adapter: "sqlite3", database: ":memory:")
+# system("mysql -u root -e 'drop database if exists __test__; create database __test__'"); ActiveRecord::Base.establish_connection(adapter: "mysql2", host: "127.0.0.1", username: "root", password: "", database: "__test__")
+
+ActiveRecord::Schema.define do
+  create_table :users do |t|
+    t.string :name
+  end
+  create_table :articles do |t|
+    t.string :name
+    t.integer :score
+  end
+  create_table :favorites do |t|
+    t.belongs_to :user
+    t.belongs_to :article
+  end
+end
+
+class User < ActiveRecord::Base
+  has_many :favorites, dependent: :destroy
+  has_many :articles, through: :favorites
+end
+
+class Article < ActiveRecord::Base
+  has_many :favorites, dependent: :destroy
+  has_many :users, through: :favorites
+end
+
+class Favorite < ActiveRecord::Base
+  belongs_to :user
+  belongs_to :article
+end
+
+article1 = Article.create!(name: "a1", score: 10)
+article2 = Article.create!(name: "a2", score: 20)
+user1 = User.create!(name: "u1")
+user1.articles << article1
+user1.articles << article2
+user1.articles.count
+
+p user1.articles.sum(:score)          #=> 30
+p user1.articles.average(:score).to_i #=> 15
+p user1.articles.minimum(:score).to_i #=> 10
+p user1.articles.maximum(:score).to_i #=> 20
+p user1.articles.count(group: :name) #=> {"a1"=>1, "a2"=>1}

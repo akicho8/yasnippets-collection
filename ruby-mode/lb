@@ -1,0 +1,5 @@
+# --
+__logger = ActiveRecord::Base.logger
+ActiveRecord::Base.logger = ActiveSupport::Logger.new(STDOUT)
+$0
+ActiveRecord::Base.logger = __logger

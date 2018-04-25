@@ -1,0 +1,2 @@
+# --
+remove_column :${1:articles}, :${2:created_at}

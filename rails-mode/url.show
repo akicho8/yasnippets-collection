@@ -1,0 +1,4 @@
+# name: /admin/users/1 (show update destroy)
+# key: url
+# --
+[$0:admin, @${1:user}]

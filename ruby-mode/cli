@@ -1,0 +1,50 @@
+require File.expand_path(File.join(File.dirname(__FILE__), "application/core"))
+require "optparse"
+
+module ${1:Application}
+  module CLI
+    def self.execute(args)
+      options = {
+        :output => nil,
+        :limit => nil,
+        :flag => nil,
+      }
+
+      oparser = OptionParser.new do |oparser|
+        oparser.version = "1.0.0"
+        oparser.banner = [
+          "#{oparser.program_name} または スクリプトの説明 #{oparser.ver} by A.Ikeda\n\n",
+          "使い方: #{oparser.program_name} [オプション] ディレクトリ or ファイル...\n\n",
+        ]
+        oparser.on_head("オプション")
+        oparser.on
+        oparser.on("-o", "--output=filename", "説明", String){|options[:output]|}
+        oparser.on("-l", "--limit=limit", "説明", Integer){|options[:limitsize]|}
+        oparser.on("-f", "--[no-]flag", "説明", TrueClass){|options[:flag]|}
+        # oparser.on_tail("--help", "このヘルプを表示する"){ puts oparser; abort}
+        oparser.on_tail([
+            "使用例:\n\n",
+            "  $ #{oparser.program_name} 説明\n",
+          ].join)
+
+        begin
+          oparser.parse!(args)
+        rescue OptionParser::InvalidOption => error
+          puts error
+          abort
+        end
+
+        if args.empty?
+          puts oparser
+          abort
+        end
+
+        $1::Core.run(args, options)
+      end
+    end
+  end
+end
+
+if \$0 == __FILE__
+  $1::CLI.execute(ARGV)
+end

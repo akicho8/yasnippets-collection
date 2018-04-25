@@ -1,0 +1,8 @@
+# --
+require "test/unit"
+
+class TestMain < Test::Unit::TestCase
+  test "foo" do
+    assert 1
+  end
+end

@@ -1,0 +1,4 @@
+# name: /admin/users (index)
+# key: url
+# --
+[$0:admin, :${1:users}]

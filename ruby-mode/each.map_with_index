@@ -1,0 +1,5 @@
+# name: each.with_index.collect
+# key: each
+# --
+each.with_index.collect {|value, index| [value, index]}
+

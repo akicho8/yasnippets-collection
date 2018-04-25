@@ -1,0 +1,7 @@
+# --
+@mixin function($r) {
+  -webkit-border-radius: $r;
+  -moz-border-radius: $r;
+  border-radius: $r;
+}
+# @include function(4px);

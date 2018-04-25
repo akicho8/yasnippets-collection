@@ -1,0 +1,4 @@
+# --
+teardown do
+  $0
+end

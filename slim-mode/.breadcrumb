@@ -1,0 +1,5 @@
+# --
+ol.breadcrumb
+  li= link_to("あああ", "#")
+  li= link_to("いいい", "#")
+  li.active= "ううう"

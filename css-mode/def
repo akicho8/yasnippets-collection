@@ -1,0 +1,9 @@
+# --
+text-align: center;
+margin: 0 auto;
+padding: 1em;
+width: 8em;
+height: 8em;
+display: block;
+background: #eee;
+border: 1px solid #888;

@@ -1,0 +1,4 @@
+# name: /admin/users/1?q=1 (show update destroy)
+# key: url
+# --
+polymorphic([:admin, @${1:user}], :${2:q => 1})

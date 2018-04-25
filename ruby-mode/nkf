@@ -1,0 +1,5 @@
+# --
+require "nkf"
+NKF.nkf('-w --hiragana', "あア")                # => "ああ"
+NKF.nkf('-w --katakana', "あア")                # => "アア"
+NKF.nkf('-w -Z',         "ａ-ｚＡ-Ｚ０-９（）") # => "a-zA-Z0-9()"

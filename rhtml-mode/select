@@ -1,0 +1,5 @@
+# --
+<%= form.select2(:foo) %>                                                                               <%# 独自 select_attr_hash に定義 %>
+<%= form.select(:prefecture_id, Prefecture.all.collect{|prefecture|[prefecture.name, prefecture.id]}, :prompt => true) %><%# 冗長 %>
+<%= form.collection_select(:prefecture_id, Prefecture.all, :id, :name, :prompt => true) %>                               <%# DRY化 %>
+<%= form.grouped_collection_select(:prefecture_id, Prefecture.all, :area, :id, :name, :prompt => true) %>                <%# さらにエリアでグループ化 %>

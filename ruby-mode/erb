@@ -1,0 +1,5 @@
+# --
+index_html_erb = Pathname("views/index.html.erb").expand_path
+index_html = outputdir + index_html_erb.basename.to_s.gsub(/\.erb\z/, "")
+index_html.open("w"){|f|f << ERB.new(index_html_erb.read).result(binding)}
+puts "write: #{index_html}"

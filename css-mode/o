@@ -1,0 +1,2 @@
+# --
+overflow: auto;   // clearfix相当 overflow: hidden; // 回り込ませないテキスト用

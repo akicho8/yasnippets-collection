@@ -1,0 +1,5 @@
+# --
+shared_examples_for "foo" do |arg|
+  it {arg.should == 1}
+end
+it_behaves_like "foo", 1

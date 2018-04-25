@@ -1,0 +1,6 @@
+# name: 変換を伴うミラー
+# --
+$1
+upcase: ${1:$(upcase text)}
+downcase: ${1:$(downcase text)}
+string-inflection-camelize-function: ${1:$(string-inflection-camelize-function text)}

@@ -1,0 +1,4 @@
+# --
+class FooError < ArgumentError; end
+class FooError < ActiveRecord::RecordNotFound; end
+class FooError < StandardError; end

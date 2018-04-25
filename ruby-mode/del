@@ -1,0 +1,2 @@
+# --
+delegate :${1:name}, to: :${2:user}, :allow_nil => false, :prefix => false # as $2_$1

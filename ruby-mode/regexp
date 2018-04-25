@@ -1,0 +1,5 @@
+# --
+"foobar".match(/foo(?=bar)/)    # => #<MatchData "foo">  # 直後に bar がある foo
+"fooxxx".match(/foo(?!bar)/)    # => #<MatchData "foo">  # 直後に bar がない foo
+"foobar".match(/(?<=foo)bar/)   # => #<MatchData "bar">  # 直前に foo がある bar
+"xxxbar".match(/(?<!foo)bar/)   # => #<MatchData "bar">  # 直前に foo がない bar

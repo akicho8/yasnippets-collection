@@ -1,0 +1,2 @@
+# --
+skip_before_filter :$0xxx, :yyy, :only => [:action1], :except => [:action2]

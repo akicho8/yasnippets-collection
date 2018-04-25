@@ -1,0 +1,5 @@
+# --
+ActiveSupport::LogSubscriber.colorize_logging = false
+ActiveRecord::Base.logger = ActiveSupport::Logger.new(STDOUT)
+  $0
+ActiveRecord::Base.logger = nil

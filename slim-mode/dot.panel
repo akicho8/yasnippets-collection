@@ -1,0 +1,9 @@
+# key: .panel
+# --
+.panel.panel-${1:$$(yas-choose-value '("default" "primary" "success" "info" "warning" "danger"))}
+  .panel-heading
+    = "ヘッダー"
+  .panel-body
+    = $0"内容"
+  .panel-footer
+    = "フッター"

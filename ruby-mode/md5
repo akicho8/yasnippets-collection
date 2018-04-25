@@ -1,0 +1,2 @@
+# --
+Digest::MD5.hexdigest($0)

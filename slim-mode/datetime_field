@@ -1,0 +1,13 @@
+# --
+.form-group
+  = form.label(:xxx, "日時", class: "col-md-2 control-label")
+  .col-md-10
+    = datetime_field_tag(:xxx, Time.current.strftime("%Y-%m-%dT%T"),                     step: 1,            class: "form-control")
+    = datetime_field_tag(:xxx, Time.current.beginning_of_minute.strftime("%Y-%m-%dT%T"), step: 60,           class: "form-control")
+    = datetime_field_tag(:xxx, Time.current.beginning_of_hour.strftime("%Y-%m-%dT%T"),   step: 60 * 60,      class: "form-control")
+    = datetime_field_tag(:xxx, Time.current.beginning_of_day.strftime("%Y-%m-%dT%T"),    step: 60 * 60 * 24, class: "form-control")
+
+    = form.datetime_field(:xxx, step: 1,            class: "form-control", value: Time.current.strftime("%Y-%m-%dT%T"))
+    = form.datetime_field(:xxx, step: 60,           class: "form-control", value: Time.current.beginning_of_minute.strftime("%Y-%m-%dT%T"))
+    = form.datetime_field(:xxx, step: 60 * 60,      class: "form-control", value: Time.current.beginning_of_hour.strftime("%Y-%m-%dT%T"))
+    = form.datetime_field(:xxx, step: 60 * 60 * 24, class: "form-control", value: Time.current.beginning_of_day.strftime("%Y-%m-%dT%T"))

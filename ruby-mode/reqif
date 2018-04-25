@@ -1,0 +1,6 @@
+# --
+begin
+  require "$0${1:filename}"
+rescue LoadError
+  raise "Gemfile に gem '$1' を追加してください"
+end

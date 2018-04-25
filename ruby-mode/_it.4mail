@@ -1,0 +1,24 @@
+# name: メールのテスト
+# --
+context "" do
+  before do
+    @article = Article.make!(:body => "通報本文")
+    @mail = Mailman.article_mail(@article)
+    # puts @mail.to_s.toutf8
+  end
+
+  subject{@mail}
+
+  # ここは共通にしておくべき
+  it {should be_delivered_from("(app_name)運営事務局 <#{AppConfig[:info_address]}>")}
+  it {should have_header("X-Priority", "1")}
+  it {
+    proc{subject.deliver}.should change(ActionMailer::Base.deliveries, :size).by(1)
+    should have_header("Content-Transfer-Encoding", "8bit") # deliver しないとヘッダが入らないので注意
+  }
+  # ここまで
+
+  it {should be_delivered_to(@article.to_user)} # .email を自動で参照してくれる
+  it {should have_subject(/報告/)}
+  it {should have_body_text("通報本文")} # 一部だけでよい
+end

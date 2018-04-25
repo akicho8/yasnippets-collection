@@ -1,0 +1,5 @@
+# --
+<%= content_tag(:span, "その他の項目", :class => "label", "data-toggle" => "collapse", "data-target" => "#other_field", :style => "cursor:pointer") %>
+<%= content_tag(:div, :id => "other_field", :class => "collapse in", :style => "margin-top:0.5em") do %>
+  コンテンツ
+<% end %>

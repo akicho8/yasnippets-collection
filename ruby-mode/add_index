@@ -1,0 +1,3 @@
+# --
+add_index :${1:articles}, :${2:body}, :unique => true
+remove_index :$1, :$2

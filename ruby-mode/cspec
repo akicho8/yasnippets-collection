@@ -1,0 +1,119 @@
+# --
+# -*- coding: utf-8 -*-
+
+require "spec_helper"
+
+describe Openspace::CommunitiesController do
+  before do
+    user_agent_define("sp")
+    owner_sign_in
+    @alice = controller.current_owner
+  end
+
+  describe "#index" do
+    before do
+      @public_community = Community.create!(FactoryGirl.attributes_for(:community))
+    end
+    it "一覧" do
+      get :index
+      response.should be_success
+      assigns(:communities).should == [@public_community]
+      response.should render_template("index")
+    end
+  end
+
+  describe "#show" do
+    before do
+      @community = @alice.own_communities.create!
+    end
+    it "詳細" do
+      get :show, :id => @community.id
+      response.should be_success
+      response.should render_template("show")
+    end
+  end
+
+  describe "#new" do
+    it "作成フォーム" do
+      get :new
+      response.should be_success
+      response.should render_template("new")
+    end
+  end
+
+  describe "#create" do
+    it "作成" do
+      post :create, :community => FactoryGirl.attributes_for(:community)
+      response.should be_redirect
+    end
+  end
+
+  describe "#edit" do
+    before do
+      @community = @alice.own_communities.create!
+    end
+    it "編集" do
+      get :edit, :id => @community.id
+      response.should be_success
+      response.should render_template("edit")
+    end
+  end
+
+  describe "#update" do
+    before do
+      @community = @alice.own_communities.create!
+    end
+    it "更新フォーム" do
+      put :update, :id => @community.id, :community => FactoryGirl.attributes_for(:community)
+      response.should be_redirect
+    end
+  end
+
+  describe "#destroy" do
+    before do
+      @community = @alice.own_communities.create!
+    end
+    it "削除" do
+      delete :destroy, :id => @community.id
+      response.should be_redirect
+    end
+  end
+
+  describe "タイトル編集・更新" do
+    before do
+      @community = @alice.own_communities.create!
+    end
+    describe "#title_edit" do
+      it "タイトル編集" do
+        get :title_edit, :id => @community.id
+        response.should be_success
+        response.should render_template("title_edit")
+      end
+    end
+    describe "#title_edit_put" do
+      it "タイトル更新フォーム" do
+        put :title_edit_put, :id => @community.id, :community => FactoryGirl.attributes_for(:community)
+        response.should be_redirect
+      end
+    end
+  end
+
+  describe "コメント編集・更新" do
+    before do
+      @community = @alice.own_communities.create!
+    end
+    describe "#body_edit" do
+      it "コメント編集" do
+        get :body_edit, :id => @community.id
+        response.should be_success
+        response.should render_template("body_edit")
+      end
+    end
+    describe "#body_edit_put" do
+      it "コメント更新フォーム" do
+        put :body_edit_put, :id => @community.id, :community => FactoryGirl.attributes_for(:community)
+        response.should be_redirect
+      end
+    end
+  end
+end

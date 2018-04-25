@@ -1,0 +1,4 @@
+# --
+<%= content_tag(:ul, :class => "unstyled") do %>
+  $0
+<% end %>

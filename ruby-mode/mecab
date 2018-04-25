@@ -1,0 +1,13 @@
+# --
+require "natto"
+puts Natto::MeCab.new.parse("夏と花火")
+
+require "natto"
+require "nkf"
+nm = Natto::MeCab.new('-F%m\t%f[0]\t%f[7]')
+yomis = nm.enum_parse("夏と花火").collect do |e|
+  unless e.is_eos?
+    NKF.nkf("-w --hiragana", e.feature.split(/\t/).last)
+  end
+end
+yomis.compact                   # => ["なつ", "と", "はなび"]

@@ -1,0 +1,4 @@
+# name: /admin/users?q=1 (index)
+# key: url
+# --
+polymorphic([$0:admin, :${1:users}], :${2:q => 1})

@@ -1,0 +1,6 @@
+# --
+require "active_support/testing/stream"
+include ActiveSupport::Testing::Stream
+silence_stream(STDOUT) do
+$0
+end

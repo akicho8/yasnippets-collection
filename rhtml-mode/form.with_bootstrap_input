@@ -1,0 +1,7 @@
+# name: bootstrap_input を使ったテキストフィールドフォーム
+# key: form
+# --
+<% form_tag([:admin, :$0users], :method => :get, :class => "form-horizontal") do %>
+  <%= bootstrap_input(:label => "検索ワード", :key => :q, :type => :text_field, :default => params[:q]) %>
+  <%= submit_tag("検索", :name => nil) %>
+<% end %>

@@ -1,0 +1,15 @@
+# --
+str1 = "a\nb\nc"
+str2 = "a\nx\nc"
+
+require "diff/lcs"
+diff = Diff::LCS.sdiff(*[str1, str2].collect { |e| e.lines.collect(&:rstrip) }).each_with_object("") do |e, m|
+  if e.old_element != e.new_element
+    m << "- #{e.old_element}\n" if e.old_element
+    m << "+ #{e.new_element}\n" if e.new_element
+  end
+end
+
+puts diff                       # => nil
+# >> - b
+# >> + x

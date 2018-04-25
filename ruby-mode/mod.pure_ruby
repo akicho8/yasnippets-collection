@@ -1,0 +1,19 @@
+# name: self.included(base) 基本メソッドだけを使った方法
+# key: mod
+# --
+module ${1:`(string-inflection-camelize-function (file-name-nondirectory (file-name-sans-extension (buffer-file-name))))`}
+  def self.included(base)
+    base.extend(ClassMethods)
+    base.send(:include, InstanceMethods)
+    base.class_eval do
+    end
+  end
+
+  module ClassMethods
+  end
+
+  module InstanceMethods
+  $0
+  end
+end
+include $1

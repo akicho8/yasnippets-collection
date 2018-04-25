@@ -1,0 +1,4 @@
+# --
+class_methods do
+  $0
+end

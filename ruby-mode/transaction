@@ -1,0 +1,8 @@
+# --
+begin
+  ActiveRecord::Base.transaction do
+    $0record.save!
+    # raise ActiveRecord::Rollback
+  end
+rescue ActiveRecord::RecordInvalid => error
+end

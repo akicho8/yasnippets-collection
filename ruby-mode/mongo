@@ -1,0 +1,15 @@
+# --
+require "mongoid"
+
+Mongoid::Config.connect_to("test")
+Mongoid::Clients.default.database.drop
+Mongoid::Clients.default.collections.count # => 0
+
+class User
+  include Mongoid::Document
+  field :name, type: String
+end
+
+user = User.create!(:name => "alice")
+user                            # => #<User _id: 5817f14b279cff5de38aa336, name: "alice">
+User.count                      # => 1

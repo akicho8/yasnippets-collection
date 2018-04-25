@@ -1,0 +1,26 @@
+# --
+$0
+with_options(:presence => true, :allow_blank => true) do |o|
+  o.validates :title, :length => {:maximum => AppConfig[:community_title_length]}
+  o.validates :foo, :numericality => {:greater_than_or_equal_to => 1}
+  o.validates :foo, :uniqueness => true
+  o.validates :foo, :uniqueness => {:scope => :type, :case_sensitive => false}
+  o.validates :email, :format => {:with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create}
+  o.validates :url, :format => {:with => Regexp.compile(Regexp.escape("http://#{AppConfig[:server_domain]}/"))}
+  o.validates :url, :format => {:with => /#{Regexp.escape(AppConfig[:server_domain])}/}
+  o.validates :gender_name, :inclusion => ["male", "female"]
+  o.validates :name, :length => 6..20
+  o.validates :age, :numericality => true
+  o.validates :age, :numericality => {:greater_than_or_equal_to => 20}
+  o.validates :login_name, :exclusion => { :in => ["admin", "superuser"] },
+  o.validates :login_name, :format => {:without => Regexp.union(/\A\d+\z/, /\A[a-z]+\z/i, /\A(.)\1+\z/), :message => "が単純すぎます。"}
+  o.validates :my_flag, :acceptance => true
+  o.validates :my_flag, :acceptance => {:accept => "true"}
+  o.validates :password, :secure_password => {:collision_attrs => [:login, :email, :full_name]
+  # エラーを書く場所
+  # :activerecord => {:errors => {:models => {:user => {:attributes => {:title => {:blank => "x",},},},},},},
+  # :activerecord => {:errors => {:models => {:user => {:blank => "x",},},},},
+  # :activerecord => {:errors => {:messages => {:blank => "x",},},},
+  # :errors => {:attributes => {:title => {:blank => "x",},},},
+  # :errors => {:messages => {:blank => "x",},},
+end

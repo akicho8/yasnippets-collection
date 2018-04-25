@@ -1,0 +1,2 @@
+# --
+<%= content_tag(:span, "${2:あとで書く}", :class => "${1:$$(yas-choose-value '("label" "label label-important" "label label-warning" "label label-success" "label label-info"))}") %>

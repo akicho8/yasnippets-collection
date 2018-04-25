@@ -1,0 +1,5 @@
+# --
+before_validation :on => :create do
+  self.$0xxx ||= false
+  true
+end

@@ -1,0 +1,5 @@
+# --
+<% content_for(:coffeescript_inline) do %>
+  $ ->
+    $0
+<% end %>

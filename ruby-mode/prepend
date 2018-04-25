@@ -1,0 +1,4 @@
+# --
+prepend Module.new {
+  $0
+}

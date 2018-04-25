@@ -1,0 +1,6 @@
+# --
+# 種類: truncation:DELETE, transaction:TRANSACTION(?)
+DatabaseCleaner.clean_with(:truncation) # 一回だけ実行する場合
+DatabaseCleaner.strategy = :truncation # {:only => ["items"]} or {:except => ["articles"]}
+DatabaseCleaner.start
+DatabaseCleaner.clean

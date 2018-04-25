@@ -1,0 +1,31 @@
+# --
+be_an_instance_of(Array)
+be_true
+be_false
+be_has_key(:tag_list)
+be_empty
+be_valid
+be_invalid
+be_present
+be_redirect
+redirect_to(:desk)
+change(ActionMailer::Base.deliveries, :size).by(1)
+change(Article, :count).by(1)
+change(Article, :count).from(0).to(1)
+change(Article, :count).to(1)
+have(1).errors_on(:tag_list)
+have_body_text("本文")
+have_header("Content-Type", "text/plain")
+have_subject("[あいうえお] (subject)")
+include("foo")
+include("あいうえお")
+include?(:bar => 1)
+match(/^SELECT/)
+raise_error(ZeroDivisionError)
+raise_error(ZeroDivisionError, /divided/)
+raise_error(ZeroDivisionError, /divided/){|error|error.var.should match(/./)}
+raise_error(ZeroDivisionError, "divided by 0")
+render_template("index")
+route_to(:controller => "tops", :action => "index")
+be_delivered_from("alice@localhost")
+be_delivered_to("alice@localhost")

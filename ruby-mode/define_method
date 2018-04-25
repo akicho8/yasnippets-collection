@@ -1,0 +1,15 @@
+# --
+class C
+  [:foo, :bar].each{|key|
+    define_method("#{key}") do |*args|
+      p args
+    end
+    define_method("#{key}=") do |value|
+      instance_variable_set("@#{key}", value)
+      # send("@#{key}=", value)
+      p @foo
+    end
+  }
+end
+C.new.foo(1,2,3)
+C.new.foo = 1

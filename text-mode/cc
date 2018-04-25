@@ -1,0 +1,2 @@
+# --
+# -*- coding: utf-8; compile-command: "ruby $0`(file-name-nondirectory (buffer-file-name))`" -*-

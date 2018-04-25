@@ -1,0 +1,7 @@
+# --
+with_options(:presence => true) do |o|
+  o.validates :$0
+end
+with_options(:allow_blank => true) do |o|
+  o.validates :
+end

@@ -1,0 +1,4 @@
+# name: each_with_object([]){|e, a|a << e}
+# key: each
+# --
+each_with_object([]) {|e, a|a << e}

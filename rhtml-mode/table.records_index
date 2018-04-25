@@ -1,0 +1,18 @@
+# name: レコード配列の表示用
+# key: table
+# --
+<%= content_tag(:table, :class => "table") do %>
+  <%= content_tag(:thead) do %>
+    <%= content_tag(:tr) do %>
+      <%= content_tag(:th, Article.human_attribute_name(:id)) %>
+    <% end %>
+  <% end %>
+  <%= content_tag(:tbody) do %>
+    <% @records.each do |record| -%>
+      <%= content_tag(:tr) do %>
+        <%= content_tag(:td, record.id) %>
+      <% end %>
+    <% end -%>
+  <% end %>
+<% end %>
+<%= paginate @records -%>

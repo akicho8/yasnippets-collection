@@ -1,0 +1,37 @@
+<%# ポップアップダイアログを表示する例 %>
+
+<% content_for(:css_inline) do %>
+  input.text { margin-bottom:12px; width:95%; padding: .4em; }
+  fieldset { padding:0; border:0; margin-top:25px; }
+<% end %>
+
+<% content_for(:jquery_inline) do %>
+   $("#dialog_form:ui-dialog").dialog("destroy");
+   $("#dialog_form").dialog({
+     autoOpen: false, /* true:最初からクリックして起動した状態 false:呼ばれないと出ない */
+     width: 350,
+     height: 300,
+     modal: true, /* ダイアログが起動したら他の入力を禁止する */
+     buttons: {
+        "ログイン": function() {
+            $(this).dialog("close"); /* ここでフォームを submit すればいい */
+         }
+     }});
+   $("#dialog_open").click(function() {
+     $("#dialog_form").dialog("open");
+   });
+<% end %>
+
+<%= content_tag(:div, :title => "ログイン", :id => "dialog_form") do %>
+  <% @article = Article.new %>
+  <%= form_for(@article, :url => [:admin, @article], :html => {:multipart => false}) do |form| %>
+    <%= content_tag(:fieldset) do %>
+      <%= form.error_messages %>
+      <%= form.label(:title) %>
+      <%= form.text_field(:title, :class => "text ui-widget-content ui-corner-all") %>
+      <%= form.submit("ログイン") %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<%= link_to("ダイアログを開く", "#", :id => "dialog_open") %>

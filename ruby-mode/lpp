@@ -1,0 +1,2 @@
+# --
+link_to($0@article.pixer.original_filename, @article.pixer.url, :target => :blank)

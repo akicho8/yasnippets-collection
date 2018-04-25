@@ -1,0 +1,17 @@
+# --
+.table-responsive
+  table.table.table-striped.table-bordered.table-hover.table-condensed
+    thead
+      tr
+        th= "column"
+    tbody
+      tr
+        td= "普"
+      tr.active
+        td= "灰"
+      tr.success
+        td= "緑"
+      tr.warning
+        td= "黄"
+      tr.danger
+        td= "赤"

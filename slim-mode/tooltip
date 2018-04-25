@@ -1,0 +1,2 @@
+# --
+= link_to("name", "#", data: {toggle: :tooltip}, title: "ここにかく")

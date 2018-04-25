@@ -1,0 +1,2 @@
+# --
+`(shell-command-to-string "ruby -e 'require \"uuidtools\"; print UUIDTools::UUID.random_create.hexdigest'")`

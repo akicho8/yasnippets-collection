@@ -1,0 +1,4 @@
+# name: expect {}.to raise_error
+# key: ex
+# --
+expect { $0 }.to raise_error

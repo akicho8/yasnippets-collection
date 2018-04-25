@@ -1,0 +1,8 @@
+# --
+require "timeout"
+begin
+  Timeout::timeout(3) do
+    $0
+  end
+rescue Timeout::Error => error
+end

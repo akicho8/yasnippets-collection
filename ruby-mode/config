@@ -1,0 +1,5 @@
+# --
+include ActiveSupport::Configurable
+config_accessor :foo, :bar
+config.foo = 1
+config.bar = 2

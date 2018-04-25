@@ -1,0 +1,10 @@
+# name: find_each(:batch_size => 50){|record|record}
+# key: each
+# --
+find_each(:batch_size => 50) do |record|
+  $0if record.save
+    p [record.id, "ok"]
+  else
+    p [record.id, record.errors]
+  end
+end

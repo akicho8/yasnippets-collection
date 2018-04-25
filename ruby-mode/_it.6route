@@ -1,0 +1,5 @@
+# name: ルーティング
+# --
+it "ルーティングが正しい" do
+  {:get => "/"}.should route_to(:controller => "tops", :action => "index")
+end

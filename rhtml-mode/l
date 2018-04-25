@@ -1,0 +1,3 @@
+# --
+<%= link_to(${1:"名前"}, ${2:"http://www.google.co.jp/"}, :target => "_blank") %>
+<%= link_to(User.human_attribute_name(:label_new), [:new, :admin, @user], :target => "_blank", :method => :put, :remote => true, :confirm => t(:label_are_you_sure_p)) %>

@@ -1,0 +1,2 @@
+# --
+<% raise $0.pretty_inspect %>

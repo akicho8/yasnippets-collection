@@ -1,0 +1,4 @@
+# name: File.expand_path
+# key: path
+# --
+File.expand_path("../$0", __FILE__)

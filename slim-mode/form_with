@@ -1,0 +1,18 @@
+# --
+= form_with(url: [:mock, :maintenance_edit], class: "form-horizontal") do |form|
+  = render partial: "error_messages", locals: {form: form}
+  .form-group
+    = form.label(:title, class: "col-md-2 control-label")
+    .col-md-10
+      = form.text_field(:title, class: "form-control")
+  .form-group
+    .col-md-offset-2.col-md-10
+      = form.submit("保存", class: "btn btn-primary")
+
+= form_with(model: [controller.class.parent_name.underscore, current_record], class: "form-inline") do |form|
+  = render partial: "error_messages", locals: {form: form}
+  = form.fields_for(:type011_comments, form.object.type011_comments.build) do |form|
+    .form-group
+      = form.text_field(:comment, class: "form-control")
+      =<> form.submit("発言", class: "btn btn-primary")
+

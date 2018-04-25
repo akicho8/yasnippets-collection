@@ -1,0 +1,33 @@
+# --
+`(yas-choose-value '(
+"has-text-white"
+"has-text-black"
+"has-text-light"
+"has-text-dark"
+"has-text-primary"
+"has-text-info"
+"has-text-link"
+"has-text-success"
+"has-text-warning"
+"has-text-danger"
+"has-text-black-bis"
+"has-text-black-ter"
+"has-text-grey-darker"
+"has-text-grey-dark"
+"has-text-grey"
+"has-text-grey-light"
+"has-text-grey-lighter"
+"has-text-white-ter"
+"has-text-white-bis"
+
+"has-text-centered"
+"has-text-justified"
+"has-text-left"
+"has-text-right"
+
+"has-text-weight-light"
+"has-text-weight-normal"
+"has-text-weight-semibold"
+"has-text-weight-bold"
+
+))`

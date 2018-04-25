@@ -1,0 +1,14 @@
+#name : cache1 - ページキャッシュ(Level1)
+# --
+#  レベル1: ページキャッシュ
+#   使い所: ユニークでない静的ページで使用する
+#     効用: 静的ファイルを public 下に置くためもっとも速くなる
+#   注意点: before_action すら通らなくなる。【?a=1 などのクエリは無効になる】
+#           開発環境だと / のとき public/index.html は読み込まれるが、
+#           /articles となっているとき public/articles.html は読まれないのでキャッシュが効いてないと勘違いしないこと
+#           Passenger 経由だと問題なく public/articles.html が優先されて読み込まれる
+# 削除方法: cron などで定期的に削除する
+caches_page :index, :show
+cache_sweeper :article_sweeper
+# Sweeper の中で消すとき
+#   expire_page :action => [:index, :show] # 非常によくできていて show を消すときに id を渡す必要なし

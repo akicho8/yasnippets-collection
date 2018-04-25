@@ -1,0 +1,4 @@
+# --
+Rails.cache.fetch("#{__method__}", :expires_in => 5.minutes) do
+  $0
+end

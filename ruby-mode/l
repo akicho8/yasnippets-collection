@@ -1,0 +1,2 @@
+# --
+Rails.logger.debug $0.inspect

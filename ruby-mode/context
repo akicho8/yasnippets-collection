@@ -1,0 +1,7 @@
+# --
+context "$0" do
+  before do
+  end
+  it do
+  end
+end

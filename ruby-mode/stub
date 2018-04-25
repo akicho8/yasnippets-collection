@@ -1,0 +1,5 @@
+# --
+require "rr"
+extend RR::Adapters::RRMethods
+stub($0Foo = Object.new).find.stub!.name{"alice"}
+p Foo.find(1).name

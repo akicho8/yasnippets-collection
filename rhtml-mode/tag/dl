@@ -1,0 +1,4 @@
+# --
+<%= content_tag(:dl) do %>
+  $0
+<%- end -%>

@@ -1,0 +1,8 @@
+# --
+require "rubygems"
+require "active_support/all"
+require "fileutils"
+require "pathname"
+require "kconv"
+require "pp"
+$0

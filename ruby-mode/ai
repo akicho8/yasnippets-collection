@@ -1,0 +1,4 @@
+# --
+after_initialize do
+  self.xxx ||= 0
+end

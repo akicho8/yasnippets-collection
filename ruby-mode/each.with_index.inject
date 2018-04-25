@@ -1,0 +1,4 @@
+# name: each.with_index.inject({}){|hash, ((key, value), index)|hash.merge(key => value + index)}
+# key: each
+# --
+each.with_index.inject({}) {|hash, ((key, value), index)| $0hash.merge(key => value + index)}

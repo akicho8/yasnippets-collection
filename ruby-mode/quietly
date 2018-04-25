@@ -1,0 +1,6 @@
+# --
+require "active_support/testing/stream"
+include ActiveSupport::Testing::Stream
+quietly do
+$0
+end

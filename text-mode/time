@@ -1,0 +1,2 @@
+# --
+`(format-time-string "%Y-%m-%d %T" (current-time))`$0

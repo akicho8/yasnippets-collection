@@ -1,0 +1,16 @@
+# --
+$0alias new old
+alias_method :new, :old
+alias_attribute :new, :old
+
+unless method_defined? :func_without_option
+  def func_with_option
+    if func_without_option
+      true
+    else
+      true
+    end
+  end
+  alias_method :func_without_option, :func
+  alias_method :func, :func_with_option
+end

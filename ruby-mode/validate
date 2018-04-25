@@ -1,0 +1,8 @@
+# --
+validate :on => :create do
+  if changes[:members_limit] && members_limit && AppConfig[:community_members_wide_limit]
+    if members_limit > AppConfig[:community_members_wide_limit]
+      errors.add(:base, "連合軍枠はこれ以上広げられません")
+    end
+  end
+end

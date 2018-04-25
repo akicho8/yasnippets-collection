@@ -1,0 +1,8 @@
+# name: 小さいタイプ
+# key: alert
+# --
+<%= content_tag(:div, :class => "alert ${1:$$(yas-choose-value '("" "alert-info" "alert-success" "alert-error"))}") do %>
+  <%= link_to("&times;".html_safe, "#", :class => "close", "data-dismiss" => "alert") %>
+  <%= content_tag(:strong, "Info:") %>
+  ${2:メッセージ}
+<% end %>

@@ -1,0 +1,31 @@
+# --
+$0item = double("item") # doubleの引数はエラーになったときにわかりやすいように同じ名前を入れておくのが習慣
+
+# stubは呼ばれなくてもよいメソッドの定義
+item.stub(:m1).and_return(1)              # item.m1    #=> 1 とする
+item.stub(:m1).and_return(1,2,3)          # item.m1    #=> 順に 1 2 3 を返す
+item.stub_chain(:x, :y, :z).and_return(1) # item.x.y.z #=> 1 とする
+
+# should_receive は呼ばれることを確認
+item.should_receive(:m1).and_return(1)                # item.m1 が呼ばれなかったらエラー
+item.should_receive(:m1).and_raise(ZeroDivisionError) # item.m1 で ZeroDivisionError を返す
+
+# モックの定義ではない。呼ばれる回数のテスト。既存のメソッドに対しても可
+item.should_receive(:m1).once              # 1回だけ
+item.should_receive(:m1).twist             # 2回だけ
+item.should_receive(:m1).exactly(3).times  # 3回だけ
+item.should_receive(:m1).at_most(5).times  # 5回以内
+item.should_receive(:m1).at_least(2).times # 2回以上
+# ■0回も呼ばれる
+item.should_not_receive(:m1)              # 1回も呼ばれない
+item.should_receive(:m1).never            # 1回も呼ばれない
+item.should_receive(:m1).exactly(0).times # 1回も呼ばれない
+
+# ■引数のチェック
+item.should_receive(:m1).with(1)                                 # item.m1(1)
+item.should_receive(:m1).with(anything, 2, instance_of(Integer)) # item.m1(なにか, 2, Integer型)
+item.should_receive(:m1).with(any_args)                         # item.m1(*args)
+item.should_receive(:m1).with(no_args)                          # item.m1()
+item.should_receive(:m1).with(hash_including(:a => 1))          # item.m1(:a => 1)
+item.should_receive(:m1).with(hash_not_including(:a => 1))      # item.m1(:a => 1) ではない
+item.should_receive(:m1).with(/alice/)                          # item.m1("alice1")

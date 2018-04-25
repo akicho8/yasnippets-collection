@@ -1,0 +1,4 @@
+# --
+say_with_time("Update") do
+  $0
+end

@@ -1,0 +1,4 @@
+# --
+<%= content_tag(:$0div) do %>
+  $0
+<% end %>

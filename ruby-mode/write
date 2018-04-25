@@ -1,0 +1,6 @@
+# --
+filename = Pathname(filename).expand_path
+# filename = filename.dirname.join(filename.basename(".*").to_s + ".png") # 拡張子を書換えたいとき
+FileUtils.makedirs(filename.dirname)
+filename.write("ok")
+puts "write: #{filename}"

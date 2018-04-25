@@ -1,0 +1,8 @@
+# name: 例外処理
+# --
+it "${1:テストの説明}" do
+  proc{subject}.should raise_error(ZeroDivisionError)
+  proc{subject}.should raise_error(ZeroDivisionError, "divided by 0")
+  proc{subject}.should raise_error(ZeroDivisionError, /divided/)
+  proc{subject}.should raise_error(ZeroDivisionError, /divided/){|error|error.var.should match(/./)}
+end

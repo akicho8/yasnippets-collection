@@ -1,0 +1,4 @@
+# name: /admin/users/1/edit (edit)
+# key: url
+# --
+[:edit, $0:admin, @${1:user}]

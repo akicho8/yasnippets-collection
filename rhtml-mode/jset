@@ -1,0 +1,16 @@
+# --
+<% content_for(:head) do %>
+  <%= javascript_include_tag("/javascripts/range_slider.js") %>
+  # public/javascripts/range_slider.coffee を記述
+<% end %>
+
+<% content_for(:jquery_inline) do %>
+  $("#age_slider").range_slider(<%== {
+    :value1        => friend_search.age_from_i || 20,
+    :value2        => friend_search.age_to_i || 80,
+    :hidden_field1 => "#friend_search_age_from_i",
+    :hidden_field2 => "#friend_search_age_to_i",
+    :display       => "#age_slider_display",
+    :disable       => AppConfig[:form_disable],
+  }.to_json %>);
+<% end %>

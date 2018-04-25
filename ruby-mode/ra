@@ -1,0 +1,9 @@
+# --
+raise NotImplementedError, "#{__method__} is not implemented"
+raise "must not happen"
+raise ActionController::RoutingError, "メッセージ必須"
+raise ActionController::UnknownAction
+raise ActiveRecord::RecordNotFound
+raise ActiveRecord::ActiveRecordError
+raise ActionController::MethodNotAllowed
+raise ArgumentError, ":#{arg} option required" if options[arg].nil?

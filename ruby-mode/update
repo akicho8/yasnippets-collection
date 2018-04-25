@@ -1,0 +1,3 @@
+# name: update
+# --
+update_attributes!({$0}, :without_protection => true)
