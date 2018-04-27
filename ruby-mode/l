@@ -1,2 +1,2 @@
 # --
-Rails.logger.debug $0.inspect
+Rails.logger.debug(["#{__FILE__}:#{__LINE__}", __method__, $0])

@@ -1,0 +1,7 @@
+# --
+class FooInfo
+  include ApplicationStaticRecord
+  memory_record [
+    {key: :blue, name: "青", },
+  ]
+end

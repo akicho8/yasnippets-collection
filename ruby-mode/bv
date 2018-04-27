@@ -1,5 +1,4 @@
 # --
-before_validation :on => :create do
-  self.$0xxx ||= false
-  true
+before_validation on: :create do
+  self.foo ||= "default"
 end
