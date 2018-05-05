@@ -1,0 +1,9 @@
+# --
+b-field(label="foo_key select")
+  b-radio-button(v-model="foo_key" native-value="alice" type="is-danger" size="is-large")
+    b-icon(icon="close")
+    span あいうえお
+  b-radio-button(v-model="foo_key" native-value="bob" type="is-success")
+    かきくけこ
+  b-radio(v-model="foo_key" native-value="carol" type="is-primary")
+    さしすせそ

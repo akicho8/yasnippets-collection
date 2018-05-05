@@ -1,0 +1,3 @@
+# --
+b-field(label="foo_key switch")
+  b-switch(v-model="foo_key" true-value="true" false-value="false" type="is-primary" size="is-large")

@@ -1,0 +1,17 @@
+# --
+this.yesno = "no"
+this.$dialog.confirm({
+  type: "is-danger",
+  hasIcon: true,
+  message: 'どちらですか？',
+  confirmText: 'はい',
+  cancelText: 'いいえ',
+  onConfirm: () => {
+    this.$toast.open("onConfirm")
+    console.log("onConfirm")
+    this.yesno = "yes"
+  },
+  onCancel: () => {
+    // 最後に必ず呼ばれる
+  },
+})

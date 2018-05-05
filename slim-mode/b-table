@@ -1,0 +1,5 @@
+# --
+b-table(:data="users" :paginated="false" :per-page="10")
+  template slot-scope="props"
+    b-table-column(field="name" label="名前" sortable)
+      | {{props.row.name}}
