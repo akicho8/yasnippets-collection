@@ -1,4 +1,4 @@
 # --
 b-field(label="foo_key select")
-  b-select(v-model="foo_key")
+  b-select(v-model="foo_keys" multiple native-size="5" icon="account" expanded rounded size="is-large")
     option(v-for="e in foo_infos" :value="e.key" :key="e.key") {{e.name}}

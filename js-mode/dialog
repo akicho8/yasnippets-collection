@@ -1,6 +1,7 @@
 # --
 this.yesno = "no"
 this.$dialog.confirm({
+  focusOn: "cancel", // confirm or cancel
   type: "is-danger",
   hasIcon: true,
   message: 'どちらですか？',
