@@ -1,0 +1,10 @@
+# --
+b-modal(:active.sync="message_modal_p" has-modal-card)
+  .modal-card
+    header.modal-card-head
+      p.modal-card-title タイトル
+    section.modal-card-body
+      b-field(label="メッセージ")
+        input.input.is-large(type="text" v-model.trim="message" @keydown.enter="message_enter" autocomplete="off" ref="message_input")
+    footer.modal-card-foot
+      button.button.is-primary(@click="message_enter") 送信

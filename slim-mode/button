@@ -1,0 +1,2 @@
+# --
+button.button.is-primary.is-outlined.is-large(@click="button_click") 送信
