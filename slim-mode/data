@@ -5,7 +5,11 @@
       .title.is-4 Vue Internal Variables
       table.table(border=1)
         tr(v-for="(value, key) in $data")
-          th
-            | {{key}}
-          td
-            | {{value}}
+          th v-text="key"
+          td v-text="value"
+    .box
+      .title.is-4 Vue Computed Results
+      table.table(border=1)
+        tr(v-for="(e, key) in _computedWatchers")
+          th v-text="key"
+          td v-text="e.value"
