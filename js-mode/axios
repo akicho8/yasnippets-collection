@@ -1,0 +1,22 @@
+# --
+import axios from "axios"
+
+const params = new URLSearchParams()
+params.append("foo", v)
+
+axios({
+  method: "post",
+  timeout: 1000 * 10,
+  headers: {"X-TAISEN": true},
+  url: xxx_app_params.player_mode_moved_path,
+  data: params,
+}).then((response) => {
+  if (response.data.error_message) {
+    Vue.prototype.$toast.open({message: response.data.error_message, position: "is-bottom", type: "is-danger"})
+  }
+  if (response.data.result_data) {
+    Vue.prototype.$toast.open({message: response.data.result_data, position: "is-bottom", type: "is-success"})
+  }
+}).catch((error) => {
+  Vue.prototype.$toast.open({message: error.message, position: "is-bottom", type: "is-danger"})
+})
