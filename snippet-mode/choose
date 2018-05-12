@@ -1,1 +1,6 @@
+# --
+\`(yas-choose-value '(
+"a"
+"b"
+))`
 \${1:$$(yas-choose-value '($0"a" "b"))}

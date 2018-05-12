@@ -1,2 +1,30 @@
 # --
-p ["#{__FILE__}:#{__LINE__}", __method__, ]
+`(yas-choose-value '(
+"t.string :name, null: false, index: true, comment: \"名前\""
+"t.belongs_to :user, null: false, comment: \"ユーザー\",  # index は自動"
+"t.datetime :begin_at, null: false, index: true, comment: \"開始日時\""
+"t.text :body, null: false, index: true, comment: \"本文\""
+"t.integer :articles_count, default: 0, null: false, index: true, comment: \"個数(キャッシュ)\""
+"t.float"
+"t.decimal"
+"t.timestamp"
+"t.timestamps null: false"
+"t.time"
+"t.date"
+"t.binary"
+"t.boolean"
+
+"t.column"
+"t.index"
+"t.timestamps"
+"t.change"
+"t.change_default"
+"t.rename"
+"t.references"
+
+"t.remove"
+"t.remove_references"
+"t.remove_belongs_to"
+"t.remove_index"
+"t.remove_timestamps"
+))`

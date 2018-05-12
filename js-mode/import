@@ -1,3 +1,7 @@
 # --
+import _ from "lodash"
+import eachCons from "each-cons"
+import Vue from "vue"
 import Foo from "./foo"       // export default Foo の場合
 import { Foo } from "./foo"   // export default { Foo } の場合
+

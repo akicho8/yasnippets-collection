@@ -1,2 +1,7 @@
 # --
-button.button.is-primary.is-outlined.is-large(@click="button_click") 送信
+`(yas-choose-value '(
+'button.button.is-primary.is-outlined.is-large(@click="button_click") 送信'"has-text-white"
+))`
+
+
+
