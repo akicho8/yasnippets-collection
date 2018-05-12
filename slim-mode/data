@@ -1,0 +1,11 @@
+# --
+.columns
+  .column
+    .box
+      .title.is-4 Vue Internal Variables
+      table.table(border=1)
+        tr(v-for="(value, key) in $data")
+          th
+            | {{key}}
+          td
+            | {{value}}
