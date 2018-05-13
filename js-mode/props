@@ -1,0 +1,7 @@
+# --
+`(yas-choose-value '(
+"foo: { type: String,  default: \"view_mode\",      },"
+"foo: { type: Number,  default: 123,              },"
+"foo: { type: Boolean, default: false,            },"
+"foo: { type: Array,   default: () => [\"x\", \"y\"], },"
+))`

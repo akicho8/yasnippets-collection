@@ -1,9 +1,6 @@
 # --
-`(yas-choose-value '(
-"console.log(\"DEBUG\", $0)"
-"console.log($0)"
-"console.table($0)"
+console.`(yas-choose-value '(
+"log(\"DEBUG\", \$0)"
+"log($0)"
+"table($0)"
 ))`
-
-
-

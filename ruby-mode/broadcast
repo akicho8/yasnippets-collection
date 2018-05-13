@@ -1,0 +1,6 @@
+# --
+`(yas-choose-value '(
+"ActionCable.server.broadcast(\"foo_channel\", data)"
+"FooChannel.broadcast_to(model, data)"
+"transmit data"
+))`

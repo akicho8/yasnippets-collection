@@ -1,8 +1,10 @@
 # --
-import _ from "lodash"
-import axios from "axios"
-import eachCons from "each-cons"
-import Vue from "vue"
-import Foo from "./foo"       // export default Foo の場合
-import { Foo } from "./foo"   // export default { Foo } の場合
-
+`(yas-choose-value '(
+"import _ from \"lodash\""
+"Object.defineProperty(Vue.prototype, '_', {value: _})"
+"import axios from \"axios\""
+"import eachCons from \"each-cons\""
+"import Vue from \"vue\""
+"import Foo from \"./foo\"       // export default Foo の場合"
+"import { Foo } from \"./foo\"   // export default { Foo } の場合"
+))`
