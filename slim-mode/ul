@@ -1,8 +1,9 @@
-# key: ul
 # --
-ul.list-unstyled
-  - form.object.errors.full_messages.each do |full_message|
-    li= full_message
-ul.list-inline
-  li= link_to("Github", "https://github.com/akicho8/shogi_web")
-  li= link_to("将棋ウォーズ", "https://shogiwars.heroz.jp/")
+ul {
+  text-align: left;
+  margin: 0.6em auto 1em;
+  width: 10em;
+  li {
+    margin: 3px 0;
+  }
+}

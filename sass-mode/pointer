@@ -1,6 +1,6 @@
 # --
 @mixin cursor_pointer {
   a, a *, select, input[type=submit], input[type=radio], label {
-    cursor: pointer;
+    cursor: pointer
   }
 }

@@ -1,0 +1,6 @@
+# --
+a
+  color: blue
+  &:hover, &:focus
+    color: red
+    text-decoration: none

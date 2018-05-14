@@ -1,7 +1,7 @@
 # --
 `(yas-choose-value '(
-"foo: { type: String,  default: \"view_mode\",      },"
-"foo: { type: Number,  default: 123,              },"
-"foo: { type: Boolean, default: false,            },"
-"foo: { type: Array,   default: () => [\"x\", \"y\"], },"
+"foo: { type: String,  required: false, default: \"view_mode\",      },"
+"foo: { type: Number,  required: false, default: 123,              },"
+"foo: { type: Boolean, required: false, default: false,            },"
+"foo: { type: Array,   required: false, default: () => [\"x\", \"y\"], },"
 ))`

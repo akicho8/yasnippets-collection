@@ -1,7 +1,0 @@
-# --
-textarea {
-  margin: 0.4em auto;
-  width: 75%;
-  height: 8em;
-  display: block;
-}

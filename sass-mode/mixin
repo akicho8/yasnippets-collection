@@ -1,0 +1,6 @@
+# --
+@mixin foo($color: blue) {
+  color: $color
+}
+
+@include foo(red)
