@@ -1,6 +1,20 @@
 # --
-console.`(yas-choose-value '(
-"log(\"DEBUG\", \$0)"
-"log($0)"
-"table($0)"
+`(yas-choose-value '(
+"console.table()"
+"console.log(\"DEBUG\", )"
+"console.profile(\"測定1\")"
+"console.profileEnd()"
+"console.warn()"
+"console.dirxml(document)"
+"console.dir()"
+"console.log()"
+"console.info()"
+"console.warn()"
+"console.error()"
+"console.count(\"x\")"
+"console.assert(false, \"assertion error!\")"
+"console.assertEquals(a, b)"
+"console.group(\"tag1\")"
+"console.groupEnd()"
+"console.debug('これを使うと何も表示されないので注意')"
 ))`

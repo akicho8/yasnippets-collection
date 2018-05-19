@@ -1,0 +1,5 @@
+# --
+console.log(_([{k: "a", v: "1"}, {k: "b", v: "2"}]).first())                            // 1つ実行する場合は chain 不要で value() も省略できる
+console.log(_([{k: "a", v: "1"}, {k: "b", v: "2"}]).chain().first().pick('k').value())  // 2つの以上実行する場合は chain が必要で value() も必要
+console.log(_('  abc  ').chain().trim().thru(e => [e]).value())                         // thru は yield_self のようなもの
+console.log(_(' ab ').chain().trim().tap(console.log).upperCase().value())              // tap(console.log) を書ける
