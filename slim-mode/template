@@ -1,6 +1,7 @@
 # --
-template`(yas-choose-value '(
-"(v-if=\"true\")"
-"(v-else)"
-"(v-for=\"(e, key) in FooInfo.values\")"
+`(yas-choose-value '(
+"template(v-if=\"true\")"
+"template(v-if=\"false\")"
+"template(v-else)"
+"template(v-for=\"(e, key) in FooInfo.values\")"
 ))`
