@@ -1,2 +1,5 @@
 # --
-FileUtils.makedirs(Pathname($0).expand_path.dirname)
+`(yas-choose-value '(
+"require \"fileutils\"; FileUtils.mkdir_p(\"tmp/foo/bar\")"
+"require \"Pathname\"; Pathname(\"tmp/foo/bar\").mkpath"
+))`

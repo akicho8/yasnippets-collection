@@ -1,2 +1,7 @@
 # --
-FileUtils.rm_rf($0, :noop => true, :verbose => true)
+`(yas-choose-value '(
+"require \"fileutils\"; FileUtils.rm_rf(\"tmp\")"
+"require \"Pathname\"; Pathname(\"tmp\").rmtree rescue $!"
+))`
+
+

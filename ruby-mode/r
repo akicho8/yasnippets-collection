@@ -1,11 +1,11 @@
 # --
-raise `(yas-choose-value '(
-"[\"#{__FILE__}:#{__LINE__}\", __method__, $0].inspect"
-"ArgumentError, \"Pass a block or provide a callback arg, not both\" if callback_or_method_name"
-"ArgumentError, \"Expected a Symbol method name or a Proc, got #{callback_or_method_name.inspect}\""
-"NotImplementedError, \"#{__method__} is not implemented\""
-"ActiveRecord::Rollback"
-"\"must not happen\""
-"LoadError, \"Could not load '#{path_to_adapter}'\", e.backtrace"
-"TypeError, \"can't quote #{value.class.name}\""
+`(yas-choose-value '(
+"raise [\"#{__FILE__}:#{__LINE__}\", __method__, ].inspect"
+"raise NotImplementedError, \"#{__method__} is not implemented\""
+"raise \"must not happen\""
+"raise ArgumentError, \"Pass a block or provide a callback arg, not both\" if callback_or_method_name"
+"raise ArgumentError, \"Expected a Symbol method name or a Proc, got #{callback_or_method_name.inspect}\""
+"raise ActiveRecord::Rollback"
+"raise LoadError, \"Could not load '#{path_to_adapter}'\", e.backtrace"
+"raise TypeError, \"can't quote #{value.class.name}\""
 ))`

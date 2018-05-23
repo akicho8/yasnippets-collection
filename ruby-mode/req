@@ -1,2 +1,12 @@
 # --
-require "${1:active_support/all}"
+`(yas-choose-value '(
+"require \"rubygems\""
+"require \"active_support/all\""
+"require \"active_model\""
+"require \"active_record\""
+"require \"fileutils\""
+"require \"pathname\""
+"require \"kconv\""
+"require \"pp\""
+"require \"memory_record\""
+))`

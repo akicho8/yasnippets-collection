@@ -1,5 +1,3 @@
 # --
 `(yas-choose-value '(
-"raise \"must not happen\""
-"raise NotImplementedError, \"#{__method__} is not implemented\""
 ))`
