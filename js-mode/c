@@ -1,5 +1,6 @@
 # --
 `(yas-choose-value '(
+"console.log(JSON.stringify())"
 "console.table()"
 "console.log(\"DEBUG\", )"
 "console.profile(\"測定1\")"
