@@ -5,10 +5,11 @@ end
 
 with_options allow_blank: true do
   validates :$1, uniqueness: true
-  validates :$1, inclusion: FooInfo.keys.collect(&:to_s)
+  validates :$1, inclusion: FooInfo..collect(&:to_s)
   validates :$1, uniqueness: {scope: :parent_id}
   validates :$1, length: {maximum: 8}
   validates :$1, length: 1..8
   validates :$1, numericality: true
   validates :$1, numericality: {greater_than_or_equal_to: 18}
+  validates :$1, format: {:with => /\A[_a-z]\z/i, on: :create}
 end

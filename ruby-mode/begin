@@ -1,10 +1,7 @@
 # --
 begin
-  $0
-rescue ActiveRecord::RecordInvalid => error
-rescue Timeout::Error => error
-rescue => error
-  # (yas/expand-link "mail")$0
-ensure
+rescue => e
+  r
 else
+ensure
 end
