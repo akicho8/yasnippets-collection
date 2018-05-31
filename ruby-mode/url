@@ -25,3 +25,4 @@ polymorphic_path([:edit, :admin, :user], id: record.id)  # => /admin/users/1/edi
 
 Rails.application.routes.url_helpers.admin_user_url
 Rails.application.routes.url_helpers.url_for([:resource_ns1, self, only_path: true])
+Rails.application.routes.url_helpers.url_for([:resource_ns1, self, {only_path: false}.merge(ActionMailer::Base.default_url_options)])

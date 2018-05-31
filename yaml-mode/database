@@ -1,0 +1,21 @@
+# --
+defaults: &defaults
+  adapter: mysql2
+  charset: utf8
+  encoding: utf8
+  reconnect: true
+  host: 127.0.0.1
+  username: root
+  password:
+
+development:
+  <<: *defaults
+  database: foo_development
+
+production:
+  <<: *defaults
+  database: foo_production
+
+test:
+  <<: *defaults
+  database: foo_test

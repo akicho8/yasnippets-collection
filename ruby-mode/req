@@ -8,5 +8,7 @@
 "require \"pathname\""
 "require \"kconv\""
 "require \"pp\""
+"require \"org_tp\""
+"require \"bundler/setup\""
 "require \"memory_record\""
 ))`

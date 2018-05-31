@@ -40,4 +40,14 @@
 "is-uppercase"
 "is-italic"
 
+"is-three-quarters"
+"is-two-thirds"
+"is-half"
+"is-one-third"
+"is-one-quarter"
+"is-four-fifths"
+"is-three-fifths"
+"is-two-fifths"
+"is-one-fifth"
+
 ))`
