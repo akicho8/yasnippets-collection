@@ -1,4 +1,0 @@
-# name: Rails.logger.debug ["#{__FILE__}:#{__LINE__}", __method__]
-# key: d
-# --
-Rails.logger.debug ["#{__FILE__}:#{__LINE__}", __method__, $0]

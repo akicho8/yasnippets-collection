@@ -1,2 +1,6 @@
 # --
-gem "$0activerecord", "3.2.13"
+`(yas-choose-value '(
+"gem \"power_assert\", path: \"~/src/power_assert\""
+"gem \"activerecord\", \"3.2.13\""
+"gem \"test-unit\""
+))`

@@ -50,4 +50,10 @@
 "is-two-fifths"
 "is-one-fifth"
 
+"is-bordered"
+"is-striped"
+"is-narrow"
+"is-hoverable"
+"is-fullwidth"
+
 ))`

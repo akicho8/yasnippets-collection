@@ -1,0 +1,12 @@
+# --
+`(yas-choose-value '(
+"expect().to eq()"
+"expect { }.to change { ActionMailer::Base.deliveries.count }.by(1) # .from(0).to(1)"
+"expect { }.to raise_error"
+"expect(response).to have_http_status(:ok)"
+"expect(response).to have_http_status(:error)"
+"expect(response).to have_http_status(:missing)"
+"expect(response).to have_http_status(:redirect)"
+"expect(page).to have_content \"\""
+"expect(page).to have_field \"\""
+))`

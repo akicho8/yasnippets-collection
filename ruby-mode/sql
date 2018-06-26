@@ -1,5 +1,6 @@
 # --
 ActiveSupport::LogSubscriber.colorize_logging = false
+logger = ActiveRecord::Base.logger = ActiveSupport::Logger.new(STDOUT)
 ActiveRecord::Base.logger = ActiveSupport::Logger.new(STDOUT)
-  $0
-ActiveRecord::Base.logger = nil
+tp ActiveRecord::Base.connection.select_all("$0select 1")
+ActiveRecord::Base.logger = logger

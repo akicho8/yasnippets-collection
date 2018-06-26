@@ -1,4 +1,0 @@
-# name: expect().to eq()
-# key: ex
-# --
-expect($0).to eq()

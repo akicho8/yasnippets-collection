@@ -1,0 +1,6 @@
+# --
+`(yas-choose-value '(
+"assert { }"
+"assert_raises { }"
+"assert_nothing_raised { }"
+))`
