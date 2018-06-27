@@ -1,4 +1,4 @@
 # --
-before_action do
-  $0
+before_action if: proc { Rails.env.production? } do
+  raise ActionController::RoutingError, "No route matches [#{request.method}] #{request.path_info.inspect}"
 end

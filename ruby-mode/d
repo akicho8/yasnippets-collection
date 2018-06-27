@@ -1,5 +1,6 @@
 # --
 `(yas-choose-value '(
+"console"
 "byebug"
 "Rails.logger.debug [\"#{__FILE__}:#{__LINE__}\", __method__, $0]"
 "p [\"#{__FILE__}:#{__LINE__}\", __method__, $0]"

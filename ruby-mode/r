@@ -8,4 +8,5 @@
 "raise ActiveRecord::Rollback"
 "raise LoadError, \"Could not load '#{path_to_adapter}'\", e.backtrace"
 "raise TypeError, \"can't quote #{value.class.name}\""
+"raise ActionController::RoutingError, \"No route matches [#{request.method}] #{request.path_info.inspect}\""
 ))`
