@@ -1,0 +1,6 @@
+# --
+require "bundler/inline"
+
+gemfile do
+  gem "graphql"
+end

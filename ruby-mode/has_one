@@ -1,0 +1,8 @@
+# --
+has_one :${1:comment}, dependent: :destroy
+accepts_nested_attributes_for :$1
+delegate :xxx, to: :$1
+
+after_create do
+  created_${$1}
+end

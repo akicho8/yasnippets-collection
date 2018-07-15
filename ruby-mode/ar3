@@ -49,4 +49,4 @@ p user1.articles.sum(:score)          #=> 30
 p user1.articles.average(:score).to_i #=> 15
 p user1.articles.minimum(:score).to_i #=> 10
 p user1.articles.maximum(:score).to_i #=> 20
-p user1.articles.count(group: :name) #=> {"a1"=>1, "a2"=>1}
+p user1.articles.group(:name).count
