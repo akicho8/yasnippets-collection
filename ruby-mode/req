@@ -12,4 +12,6 @@
 "require \"org_tp\""
 "require \"bundler/setup\""
 "require \"memory_record\""
+"require \"active_support/concern\""
+"require \"active_support/core_ext/string\""
 ))`

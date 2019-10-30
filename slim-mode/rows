@@ -1,0 +1,2 @@
+# --
+rows: [1, form.object.XXXXXXXX.to_s.strip.lines.count].max

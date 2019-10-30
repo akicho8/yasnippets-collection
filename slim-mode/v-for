@@ -1,0 +1,3 @@
+# --
+template(v-for="row in rows")
+template(v-for="(row, i) in rows")

@@ -1,0 +1,8 @@
+# --
+`(yas-choose-value '(
+"object-fit: fill       // 伸縮       用途不明。比率無視で変形してしまう。人物写真には向かない"
+"object-fit: cover      // トリミング 写真立て用。写真の全体は必要でないとき。エリアを覆える。部分欠けする。ある部分に焦点して表示するには object-position で調整できる"
+"object-fit: contain    // 比率維持   写真が重要。全体を綺麗に表示したいとき"
+"object-fit: none       // なし       元画像をいっさい変形させない。伸縮しない"
+"object-fit: scale-down // 比率維持2  比率維持(contain) と なし(none) の小さい方。比率維持して表示したいがもともとの画像が小さいと巨大化して困る場合に使う"
+))`

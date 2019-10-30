@@ -1,0 +1,8 @@
+# --
+`(yas-choose-value '(
+"dependent: :destroy"
+"dependent: :delete"
+"dependent: :nullify"
+"dependent: :restrict_with_exception"
+"dependent: :restrict_with_error"
+))`

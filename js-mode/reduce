@@ -1,0 +1,4 @@
+# --
+return [
+  { key: "hsl",         name: 'HSL',         func: color => color.css('hsl')    },
+].reduce((a, e, i) => ({...a, [e.key]: {code: i, ...e}}), {})

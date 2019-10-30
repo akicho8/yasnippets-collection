@@ -1,0 +1,5 @@
+# --
+`(yas-choose-value '(
+"background: hsla(0,0%,0%,0.9)"
+"background: linear-gradient(to bottom, blue, red)"
+))`

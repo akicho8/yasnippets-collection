@@ -1,0 +1,7 @@
+# --
+function func1(options) {
+  options = Object.assign({}, {
+    debug: false,
+  }, options)
+  $0
+}

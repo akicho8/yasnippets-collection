@@ -1,0 +1,8 @@
+# --
+with_options as: :commentable, dependent: :destroy, inverse_of: :commentable do
+  has_many :comments
+  has_one :comment_group1_one, -> { where(group_key: "group1") }, class_name: "Comment"
+end
+accepts_nested_attributes_for :comment_group1_one, reject_if: :all_blank, allow_destroy: true
+または
+accepts_nested_attributes_for :comment_group1_one, reject_if: proc { |attributes| attributes[:id].blank? && attributes[:body].blank? }, allow_destroy: true

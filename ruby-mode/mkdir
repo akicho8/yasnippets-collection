@@ -1,5 +1,6 @@
 # --
 `(yas-choose-value '(
-"require \"fileutils\"; FileUtils.mkdir_p(\"tmp/foo/bar\")"
-"require \"Pathname\"; Pathname(\"tmp/foo/bar\").mkpath"
+"FileUtils.mkdir_p(\"path/to\")"
+"dir_path.mkpath"
+"file_path.dirname.mkpath"
 ))`

@@ -1,12 +1,11 @@
 # --
 require "active_record"
-require "pp"
+# require "pp"
 
 ActiveRecord::VERSION::STRING   # =>
 
 # ActiveRecord::Base.logger = ActiveSupport::Logger.new(STDOUT)
 # ActiveSupport::LogSubscriber.colorize_logging = false
-# ActiveRecord::Migration.verbose = false
 
 ActiveRecord::Base.establish_connection(adapter: "sqlite3", database: ":memory:")
 
@@ -17,6 +16,7 @@ ActiveRecord::Base.establish_connection(adapter: "sqlite3", database: ":memory:"
 # ActiveRecord::Base.connection.recreate_database("__test__")
 # ActiveRecord::Base.establish_connection(ActiveRecord::Base.connection_config.merge(database: "__test__"))
 
+ActiveRecord::Migration.verbose = false
 ActiveRecord::Schema.define do
   create_table :users do |t|
     t.string :name

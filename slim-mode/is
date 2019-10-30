@@ -56,4 +56,23 @@
 "is-hoverable"
 "is-fullwidth"
 
+"is-centered"
+".columns.is-gapless"
+
+"is-block"
+"is-flex"
+"is-inline"
+"is-inline-block"
+"is-inline-flex"
+
+"is-hidden-mobile"
+"is-hidden-tablet-only"
+"is-hidden-desktop-only"
+"is-hidden-widescreen-only"
+"is-hidden-touch"
+"is-hidden-tablet"
+"is-hidden-desktop"
+"is-hidden-widescreen"
+"is-hidden-fullhd"
+
 ))`

@@ -1,5 +1,6 @@
 # --
 `(yas-choose-value '(
+"console.log(\`foo:${JSON.stringify(foo)}\`)"
 "console.log(JSON.stringify())"
 "console.table()"
 "console.log(\"DEBUG\", )"

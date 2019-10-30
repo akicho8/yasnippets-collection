@@ -1,0 +1,3 @@
+# --
+// 該当のタグに ref="xxx" としておく
+this.$nextTick(() => this.$refs.xxx.focus())

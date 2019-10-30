@@ -1,0 +1,2 @@
+# --
+_.without(this.numbers_string.split(/[\s,]+/), "").map(e => parseInt(e))

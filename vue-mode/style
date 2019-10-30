@@ -1,0 +1,5 @@
+# --
+<style scoped lang="sass">
+  h1
+    color: blue
+</style>
