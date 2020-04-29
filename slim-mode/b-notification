@@ -1,0 +1,2 @@
+# --
+b-notification(:closable="false" type="is-info")

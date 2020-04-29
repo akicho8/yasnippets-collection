@@ -1,0 +1,14 @@
+# --
+created() {
+  const unwatch = this.$watch(() => [this.foo, this.bar], () => this.share_update(), {deep: true})
+  unwatch()
+},
+watch: {
+  my_method1: {
+    handler() {
+      alert("method1")
+    },
+    deep: true,
+    immediate: true,
+  },
+},

@@ -1,0 +1,2 @@
+# --
+tp ActiveRecord::Base.connection.select_all("show columns from #{WordInfo.table_name}")

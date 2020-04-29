@@ -1,0 +1,95 @@
+# --
+// パラメーターは受けとらない場合
+sample1() {
+  const modal_instance = this.$buefy.modal.open({
+    parent: this,
+    trapFocus: true,
+    hasModalCard: true,
+    animation: "",
+    component: {
+      template: \`
+        <div class="modal-card is-size-7 share_board">
+          <header class="modal-card-head">
+            <p class="modal-card-title">タイトル</p>
+          </header>
+          <section class="modal-card-body">
+            <b-input type="textarea" v-model="my_body" />
+          </section>
+          <footer class="modal-card-foot">
+            <b-button @click="post_handle" type="is-primary">保存</b-button>
+          </footer>
+        </div>
+      \`,
+      data() {
+        return {
+          my_body: "",
+        }
+      },
+      methods: {
+        post_handle() {
+          this.$emit("update:my_body", this.my_body) // すぐ親に渡したい場合
+   
+          // AJAXするにはここで行って結果を変換して this.$emit("update:my_body", this.my_body) すると同時に
+          // this.$emit("close") で閉じる
+        },
+      },
+    },
+    events: {
+      "update:my_body": (v) => {
+        console.log(this)   // parent の this と同じなので
+        this.my_body = v    // として呼び出し側に設定できる
+        // ここは親なので this.$emit("close") とするのは意味ないし、当然動かない
+        // modal_instance.close() で消せる
+      },
+    },
+  })
+}
+
+// パラメーターを受けとる場合
+sample2() {
+  const modal_instance = this.$buefy.modal.open({
+    parent: this,
+    trapFocus: true,
+    hasModalCard: true,
+    animation: "",
+    props: {
+      image_view_point: this.image_view_point,
+    },
+    component: {
+      template: `
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">Twitter画像の視点</p>
+          </header>
+          <section class="modal-card-body">
+            <div class="field"><b-radio v-model="new_image_view_point" native-value="self">自分<span class="desc">リレー将棋向け</span></b-radio></div>
+            <div class="field"><b-radio v-model="new_image_view_point" native-value="opponent">相手</b-radio></div>
+            <div class="field"><b-radio v-model="new_image_view_point" native-value="black">☗<span class="desc">詰将棋向け</span></b-radio></div>
+            <div class="field"><b-radio v-model="new_image_view_point" native-value="white">☖</b-radio></div>
+          </section>
+          <footer class="modal-card-foot">
+            <b-button @click="submit_handle" type="is-primary">更新</b-button>
+          </footer>
+        </div>
+      `,
+      props: ["image_view_point"],
+      data() {
+        return {
+          new_image_view_point: this.image_view_point,
+        }
+      },
+      methods: {
+        submit_handle() {
+          alert(this.new_image_view_point)
+          this.$emit("update:image_view_point", this.new_image_view_point)
+        },
+      },
+    },
+    events: {
+      "update:image_view_point": v => {
+        this.image_view_point = v
+        modal_instance.close()
+      }
+    },
+  })
+},

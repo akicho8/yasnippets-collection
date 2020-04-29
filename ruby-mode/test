@@ -1,3 +1,2 @@
 # --
-$0if Rails.env.test?
-end
+Rails.env.test?

@@ -1,0 +1,2 @@
+# --
+JSON.parse(response.body$0, symbolize_names: true)

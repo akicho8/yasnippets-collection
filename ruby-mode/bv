@@ -1,4 +1,7 @@
 # --
 before_validation on: :create do
-  self.foo ||= "default"
+  if Rails.env.test?
+    self.key ||= "#{self.class.name.demodulize.underscore}#{self.class.count.next}"
+  end
+  self.key ||= SecureRandom.hex
 end

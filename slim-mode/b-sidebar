@@ -1,0 +1,81 @@
+# --
+  b-sidebar(type="is-light" :fullheight="true" :overlay="true" :right="true" :open.sync="open_p")
+    .foobar
+      b-menu
+        b-menu-list(label="Menu")
+          b-menu-item(:href="piyo_shogi_app_with_params_url" label="ぴよ将棋")
+          b-menu-item(:href="kento_app_with_params_url" label="KENTO")
+          b-menu-item(@click="kifu_copy_handle" label="棋譜コピー")
+        b-menu-list(label="Sub")
+          b-menu-item(@click="mode_toggle_handle")
+            template(slot="label" slot-scope="props")
+              template(v-if="run_mode === 'play_mode'")
+                | 局面編集
+              template(v-else)
+                | 局面編集(終了)
+          b-menu-item(@click="source_read_handle" label="棋譜読み込み")
+          b-menu-item(@click="title_edit" label="タイトル編集")
+          //- b-menu-item(@click="source_read_handle" label="Twitter Card 画像の向き" :active.sync="active_p")
+
+          //- b-menu-item
+          //-   template(slot="label")
+          //-     | Twitter Card 画像の向き
+          //-     b-dropdown.is-pulled-right(aria-role="list" position="is-bottom-left" v-model="doredore")
+          //-       b-icon(icon="dots-vertical" slot="trigger")
+          //-       b-dropdown-item(aria-role="listitem" value="self") 自分
+          //-       b-dropdown-item(aria-role="listitem" value="opponent") 相手
+          //-       b-dropdown-item(aria-role="listitem") Something else
+
+          b-menu-item
+            template(slot="label" slot-scope="props")
+              | Twitter Card 画像の向き
+              b-icon.is-pulled-right(:icon="props.expanded ? 'menu-down' : 'menu-up'")
+            b-menu-item(label="自分側(初期値)")
+            b-menu-item(label="相手側")
+            b-menu-item(label="☗側(詰将棋向け)")
+            b-menu-item(label="☖側")
+            //- b-menu-item(icon="cellphone-link")
+            //-   template(slot="label")
+            //-     | Devices
+            //-     b-dropdown.is-pulled-right(aria-role="list" position="is-bottom-left" v-model="doredore")
+            //-       b-icon(icon="dots-vertical" slot="trigger")
+            //-       b-dropdown-item(aria-role="listitem" value="self") 自分
+            //-       b-dropdown-item(aria-role="listitem" value="opponent") 相手
+            //-       b-dropdown-item(aria-role="listitem") Something else
+            //- b-menu-item(icon="cash-multiple" label="Payments" disabled)
+
+        //- b-menu-list(label="Menu")
+        //-   template(v-if="run_mode === 'play_mode'")
+        //-     b-menu-item(separator)
+        //-   b-menu-item(@click="mode_toggle_handle")
+        //-     template(v-if="run_mode === 'play_mode'")
+        //-       | 局面編集
+        //-     template(v-else)
+        //-       | 局面編集(終了)
+        //-   b-menu-item(@click="source_read_handle") 棋譜読み込み
+        //-   b-menu-item(@click="title_edit") タイトル編集
+        //-   b-menu-item(@click="source_read_handle") Twitter Card 画像の向き
+        //-
+        //-   b-menu-item(icon="information-outline" label="Info")
+        //-   b-menu-item(icon="settings")
+        //-     template(slot="label" slot-scope="props")
+        //-       |  Administrator
+        //-       b-icon.is-pulled-right(:icon="props.expanded ? 'menu-down' : 'menu-up'")
+        //-     b-menu-item(icon="account" label="Users")
+        //-     b-menu-item(icon="cellphone-link")
+        //-       template(slot="label")
+        //-         |  Devices
+        //-         b-dropdown.is-pulled-right(aria-role="list" position="is-bottom-left")
+        //-           b-icon(icon="dots-vertical" slot="trigger")
+        //-           b-dropdown-item(aria-role="listitem") Action
+        //-           b-dropdown-item(aria-role="listitem") Another action
+        //-           b-dropdown-item(aria-role="listitem") Something else
+        //-     b-menu-item(icon="cash-multiple" label="Payments" disabled)
+        //-   b-menu-item(icon="account" label="My Account")
+        //-     b-menu-item(label="Account data")
+        //-     b-menu-item(label="Addresses")
+        //- b-menu-list
+        //-   b-menu-item(label="Expo" icon="link")
+        //- b-menu-list(label="Actions")
+        //-   b-menu-item(label="Logout")
+

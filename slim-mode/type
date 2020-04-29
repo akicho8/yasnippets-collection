@@ -1,0 +1,12 @@
+# --
+`(yas-choose-value '(
+"is-white"
+"is-black"
+"is-light"
+"is-dark"
+"is-primary"
+"is-info"
+"is-success"
+"is-warning"
+"is-danger"
+))`

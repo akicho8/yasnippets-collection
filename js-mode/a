@@ -1,4 +1,2 @@
 # --
-/* eslint-disable */
-alert("$0")
-/* eslint-enable */
+alert($0)

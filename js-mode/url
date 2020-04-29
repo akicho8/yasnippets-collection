@@ -1,0 +1,5 @@
+# --
+const url = new URL(location)
+url.searchParams.set("foo", this.foo)
+_.each(params, (v, k) => url.searchParams.set(k, v))
+return url.toString()

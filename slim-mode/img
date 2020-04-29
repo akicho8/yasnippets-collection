@@ -1,0 +1,4 @@
+# --
+// https://bulma.io/documentation/elements/image/
+figure.image.is-128x128
+  img.is-rounded(:src="png_url")

@@ -9,6 +9,6 @@ end
 
 RSpec.describe do
   it do
-    assert true
+    assert { 1*2 == 3 }
   end
 end

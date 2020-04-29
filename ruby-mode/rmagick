@@ -1,0 +1,18 @@
+# --
+require "rmagick"
+require "rmagick/version"
+
+Magick::VERSION                 # => "4.0.0"
+
+image = Magick::Image.new(640, 480) {
+  self.background_color = "#eeeeee"
+}
+draw = Magick::Draw.new
+draw.annotate(image, 0, 0, 0, 0, "Hello") do
+  self.fill      = 'black'
+  self.pointsize = 32
+  self.gravity   = Magick::NorthWestGravity
+end
+image.write("out.png")
+image.format = "png"
+image.to_blob[0..3]             # => "\x89PNG"

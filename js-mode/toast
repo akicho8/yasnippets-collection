@@ -1,0 +1,2 @@
+# --
+this.$buefy.toast.open({message: "OK", position: "is-bottom", type: "is-danger", duration: 1000 * 1.0, queue: false})

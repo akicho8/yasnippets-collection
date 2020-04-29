@@ -1,6 +1,8 @@
 # --
 # -*- coding: utf-8 -*-
 require "active_record"
+require "table_format"
+require "timecop"
 
 ActiveRecord::Base.logger = ActiveSupport::Logger.new(STDOUT)
 ActiveSupport::LogSubscriber.colorize_logging = false
