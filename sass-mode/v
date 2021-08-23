@@ -1,2 +1,2 @@
 # --
-vertical-align: middle
+var(--foo) var(--foo, 1px) calc(var(--foo) * 1px)

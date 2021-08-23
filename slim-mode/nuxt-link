@@ -1,0 +1,5 @@
+# --
+nuxt-link(:to="{name: 'swars-battles', query: {query: 'ok'}}") リンク
+b-button(tag="nuxt-link" :to="{name: 'settings-battles', query: {query: 'ok'}}") リンク
+b-menu-item(tag="nuxt-link" :to="{name: 'swars-users-key', params: {key: config.current_swars_user_key}}" @click.native="sound_play('click')" icon="account" label="プレイヤー情報" :disabled="!config.current_swars_user_key")
+

@@ -1,0 +1,4 @@
+# --
+throw new Error(`${this.name}.define() is not implemented`)
+this.$nuxt.error({statusCode: 500, message: "パラメータが足りません"})
+

@@ -1,0 +1,5 @@
+# --
+`(yas-choose-value '(
+"position: relative   // 親に指定"
+"position: absolute   // 子に指定"
+))`

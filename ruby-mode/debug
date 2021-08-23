@@ -1,0 +1,10 @@
+# --
+`(yas-choose-value '(
+"console"
+"byebug"
+"Rails.logger.debug [\"#{__FILE__}:#{__LINE__}\", __method__, $0]"
+"p [\"#{__FILE__}:#{__LINE__}\", __method__, $0]"
+"binding.pry"
+"tp ActiveRecord::Base.connection.tables.collect { |table| [table, ActiveRecord::Base.connection.select_value(\"select count(*) from #{table}\")] }.to_h"
+"User.connection.current_database"
+))`

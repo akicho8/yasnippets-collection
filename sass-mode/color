@@ -1,5 +1,36 @@
 # --
 `(yas-choose-value '(
-"blue"
-"red"
+"$primary"
+"change_color($primary, $alpha: 0.5)",
+
+"$orange       // hsla(14,  100%, 53%, 1.0)"
+"$yellow       // hsla(48,  100%, 67%, 1.0)"
+"$green        // hsla(141, 71%,  48%, 1.0)"
+"$turquoise    // hsla(171, 100%, 41%, 1.0)"
+"$cyan         // hsla(204, 86%,  53%, 1.0)"
+"$blue         // hsla(217, 71%,  53%, 1.0)"
+"$purple       // hsla(271, 100%, 71%, 1.0)"
+"$red          // hsla(348, 100%, 61%, 1.0)"
+
+"$black        // hsla(0, 0%, 4%, 1.0)"
+"$black-bis    // hsla(0, 0%, 7%, 1.0)"
+"$black-ter    // hsla(0, 0%, 14%, 1.0)"
+"$grey-darker  // hsla(0, 0%, 21%, 1.0)"
+"$grey-dark    // hsla(0, 0%, 29%, 1.0)"
+"$grey         // hsla(0, 0%, 48%, 1.0)"
+"$grey-light   // hsla(0, 0%, 71%, 1.0)"
+"$grey-lighter // hsla(0, 0%, 86%, 1.0)"
+"$white-ter    // hsla(0, 0%, 96%, 1.0)"
+"$white-bis    // hsla(0, 0%, 98%, 1.0)"
+"$white        // hsla(0, 0%, 100%, 1.0)"
+
+"hsla(  0, 30%, 30%, 1.0) // 赤"
+"hsla( 38, 30%, 30%, 1.0) // 橙"
+"hsla( 60, 30%, 30%, 1.0) // 黄"
+"hsla(120, 30%, 30%, 1.0) // 緑"
+"hsla(180, 30%, 30%, 1.0) // 水"
+"hsla(240, 30%, 30%, 1.0) // 青"
+"hsla(300, 30%, 30%, 1.0) // 紫"
+"hsla(  0,  0%,100%, 1.0) // 白"
+"hsla(  0,  0%,  0%, 1.0) // 黒"
 ))`

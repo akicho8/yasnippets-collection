@@ -2,3 +2,7 @@
 Rails.cache.fetch("#{__method__}", :expires_in => 5.minutes) do
   $0
 end
+Rails.cache.fetch("#{user.cache_key}/update_tracked_fields!", expires_in: 5.seconds) do
+  user.update_tracked_fields!(request)
+  true
+end

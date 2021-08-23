@@ -1,0 +1,2 @@
+# --
+@click.native="sound_play('click')"

@@ -1,0 +1,11 @@
+# --
+.is-flex.is-justify-content-center
+  .card.is-inline-block
+    .card-content
+      p.title
+        | There are
+      p.subtitle
+        | Jeff Atwood
+    .card-footer
+      p.card-footer-item
+        TweetButton(:body="base.ox_tweet_body") Tweet

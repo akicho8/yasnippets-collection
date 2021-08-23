@@ -1,6 +1,7 @@
 # --
 `(yas-choose-value '(
 "button.button.is-primary.is-outlined.is-large(@click=\"button_click\") 送信"
+".buttons.has-addons.is-centered.are-small.is-marginless.mt-3"
 ))`
 
 

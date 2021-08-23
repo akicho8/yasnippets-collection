@@ -3,14 +3,25 @@ require "redis"
 require "table_format"
 
 client = Redis.new
-client.flushdb
 tp client.info.find_all{|k, v| k.match?(/^db\d+/)}.to_h
+client.select(0)
+client.dbsize                   # => 6
+# client.flushdb
+client.ping                     # => "PONG"
+tp client.keys
 tp client.methods.sort
-# >> |-----+-----------------------------------|
-# >> | db1 | keys=3,expires=1,avg_ttl=74773905 |
-# >> | db2 | keys=12,expires=0,avg_ttl=0       |
-# >> | db3 | keys=5,expires=0,avg_ttl=0        |
-# >> |-----+-----------------------------------|
+# >> |-----+---------------------------------------|
+# >> | db0 | keys=6,expires=3,avg_ttl=111071873255 |
+# >> | db1 | keys=3,expires=3,avg_ttl=772506       |
+# >> |-----+---------------------------------------|
+# >> |-------------------------------------------------------------------|
+# >> | shogi_web_development_sidekiq:stat:failed:2020-05-05              |
+# >> | shogi_web_development_sidekiq:processes                           |
+# >> | shogi_web_development_sidekiq:ikeda-mac3.local:78391:f9dcbdd0c013 |
+# >> | shogi_web_development_sidekiq:stat:processed                      |
+# >> | shogi_web_development_sidekiq:stat:processed:2020-05-05           |
+# >> | shogi_web_development_sidekiq:stat:failed                         |
+# >> |-------------------------------------------------------------------|
 # >> |----------------------------|
 # >> | !                          |
 # >> | !=                         |

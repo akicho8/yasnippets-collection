@@ -1,5 +1,6 @@
 # --
 `(yas-choose-value '(
+"require \"table_format\""
 "require \"test/unit\""
 "require \"rubygems\""
 "require \"active_support/all\""

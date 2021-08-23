@@ -1,2 +1,9 @@
 # --
-margin: 0 auto
+// 推奨
+.block:not(:first-child)
+  margin-top: 2rem
+  margin-left: 2rem
+
+// 非推奨
+.block:not(:last-child)
+  margin-bottom: 2rem

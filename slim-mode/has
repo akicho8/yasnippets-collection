@@ -50,5 +50,18 @@
 "has-background-white-ter"
 "has-background-white-bis"
 
+"has-background-primary-light"
+"has-background-link-light"
+"has-background-info-light"
+"has-background-success-light"
+"has-background-warning-light"
+"has-background-danger-light"
+"has-background-primary-dark"
+"has-background-link-dark"
+"has-background-info-dark"
+"has-background-success-dark"
+"has-background-warning-dark"
+"has-background-danger-dark"
+
 "has-addons.is-centered"
 ))`

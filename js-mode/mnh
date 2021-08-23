@@ -1,0 +1,2 @@
+# --
+throw new Error("must not happen")

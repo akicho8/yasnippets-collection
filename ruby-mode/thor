@@ -1,0 +1,21 @@
+# --
+#!/usr/bin/env ruby
+require "bundler/setup"
+Dir.chdir(Bundler.root)
+
+require "thor"
+require "webdrivers"
+require "capybara/dsl"
+
+class Web < Thor
+  package_name "web"
+  default_command :validate
+  class_option :env, type: :string, desc: "対象の環境", default: "staging"
+
+  desc "validate", "validate が対象"
+  def validate
+    p options[:env]
+  end
+
+  start
+end

@@ -1,0 +1,11 @@
+# --
+display: flex
+justify-content: center
+align-items: center
+
+display: grid
+place-items: center
+
+display: grid
+justify-items: center
+align-items: center

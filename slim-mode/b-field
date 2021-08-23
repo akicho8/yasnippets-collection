@@ -1,3 +1,3 @@
 # --
+b-field(label="難易度" custom-class="is-small")
 b-field(grouped group-multiline)
-  b-field(label="あいうえお")

@@ -1,0 +1,5 @@
+# --
+.has-text-right.has-text-centered-mobile
+  .buttons.is-inline-block
+    b-button(@click="hiraku_handle") 開く
+    b-button(@click="kesu_handle") 閉じる

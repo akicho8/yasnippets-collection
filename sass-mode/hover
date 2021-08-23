@@ -1,2 +1,3 @@
 # --
-&:hover, &:focus
+&:hover
+  background-color: $white-ter

@@ -1,5 +1,6 @@
 # --
 `(yas-choose-value '(
+"import { support_child } from \"./support_child.js\""
 "import _ from \"lodash\""
 "Object.defineProperty(Vue.prototype, '_', {value: _})"
 "import axios from \"axios\""

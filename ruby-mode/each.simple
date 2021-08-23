@@ -1,4 +1,7 @@
 # name: each {|e| e}
 # key: each
+# expand-env: ((yas-indent-line 'auto))
 # --
-each {|${1:e}| $1$0}
+each do |e|
+  $0e
+end

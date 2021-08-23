@@ -1,0 +1,5 @@
+# --
+dir = Rails.root.join("app/assets/images")
+if e = dir.glob("#{self.class.name.underscore}*.png").sample
+  e.relative_path_from(dir).to_s
+end

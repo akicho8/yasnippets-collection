@@ -1,2 +1,2 @@
 # --
-alert($0)
+throw new Error(`${this.name}.define() is not implemented`)

@@ -1,7 +1,4 @@
 # --
-with_options(:presence => true) do |o|
-  o.$0
-end
-with_options(:allow_blank => true) do |o|
-  o.
+with_options(dependent: :destroy) do
+  $0
 end

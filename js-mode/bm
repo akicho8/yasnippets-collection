@@ -1,0 +1,4 @@
+# --
+window.__bm_start__ = performance.now()
+$0
+console.log(performance.now() - window.__bm_start__)

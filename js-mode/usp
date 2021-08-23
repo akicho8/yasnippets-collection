@@ -1,0 +1,5 @@
+# --
+const usp = new URLSearchParams()
+_.each(params, (v, k) => usp.set(k, v))
+const url = this.$config.MY_SITE_URL + `/w.zip?${usp}`
+location.href = url

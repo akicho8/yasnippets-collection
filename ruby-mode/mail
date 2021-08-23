@@ -1,4 +1,5 @@
 # --
+tp ActionMailer::Base.deliveries.collect { |e| {subject: e.subject, from: e.from, to: e.to} }
 Mailman.developper_notice(:subject => "", :body => [Setting[:community_member_out_disable]].pretty_inspect).deliver
 Mailman.developper_notice(:subject => "#{error.message} (#{error.class.name})", :body => [$0error, caller].pretty_inspect).deliver
 Mailman.developper_notice(:subject => "#{self.class.name}##{__method__}", :body => "").deliver

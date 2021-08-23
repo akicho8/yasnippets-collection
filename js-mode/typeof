@@ -1,0 +1,7 @@
+# --
+`(yas-choose-value '(
+"typeof window !== 'undefined'"
+"typeof document !== 'undefined'"
+"typeof localStorage !== 'undefined'"
+"typeof location !== 'undefined'"
+))`
