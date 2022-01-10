@@ -1,0 +1,2 @@
+# --
+record.send(:attribute_will_change!, :foo)

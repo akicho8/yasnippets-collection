@@ -1,0 +1,3 @@
+# --
+expect(1).toEqual(1)
+expect(() => throw new Error("invalid slice size")).toThrow()

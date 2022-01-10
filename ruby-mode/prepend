@@ -1,4 +1,15 @@
 # --
-prepend Module.new {
-  $0
+$0prepend Module.new {
+  def self.prepended(klass)
+    klass.class_eval do
+    end
+
+    class << klass
+      def klass_method1
+      end
+    end
+  end
+
+  def instance_method1
+  end
 }

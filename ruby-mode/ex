@@ -1,8 +1,10 @@
 # --
 `(yas-choose-value '(
+"expect().to eq(<<~EOT)"
 "expect().to eq()"
 "expect { }.to change { ActionMailer::Base.deliveries.count }.by(1) # .from(0).to(1)"
 "expect { }.to raise_error"
+"expect { }.to raise_error(StandardError, /message/)"
 "expect(response).to have_http_status(:ok)"
 "expect(response).to have_http_status(:error)"
 "expect(response).to have_http_status(:missing)"

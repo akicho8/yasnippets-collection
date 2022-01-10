@@ -1,0 +1,4 @@
+# --
+rails r ''
+cap staging rails:runner CODE='Wkbk::Book.find_by(key: "ukofXqKH2Qb").update!(folder_key: :public)'
+cap staging rails:runner CODE='Wkbk::Book.find_by(key: "ukofXqKH2Qb").tap { |e| e.assign_attributes(folder_key: :private); e.save!(touch: false) }'

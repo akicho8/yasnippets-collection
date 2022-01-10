@@ -6,8 +6,7 @@ require "timecop"
 
 ActiveRecord::VERSION::STRING   # =>
 
-# ActiveRecord::Base.logger = ActiveSupport::Logger.new(STDOUT)
-# ActiveSupport::LogSubscriber.colorize_logging = false
+ActiveSupport::LogSubscriber.colorize_logging = false
 
 ActiveRecord::Base.establish_connection(adapter: "sqlite3", database: ":memory:")
 
@@ -31,3 +30,5 @@ end
 p User.create!(name: "alice") # => #<User id: 1, name: "alice">
 
 # ActiveRecord::Base.connection.drop_database("__test__")
+
+ActiveRecord::Base.logger = ActiveSupport::Logger.new(STDOUT)

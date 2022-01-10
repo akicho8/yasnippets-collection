@@ -1,4 +1,4 @@
 # --
 .buttons.is-centered.mb-0
-  b-button.mb-0(@click="() => {}" type="is-primary") FOO
-  b-button.mb-0(@click="() => {}" type="is-primary") BAR
+  b-button.mb-0(@click="() => {}" type="is-primary" icon-left="chevron-left") FOO
+  b-button.mb-0(@click="() => {}" type="is-primary" icon-left="chevron-right") BAR

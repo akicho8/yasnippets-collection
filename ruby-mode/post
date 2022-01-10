@@ -1,0 +1,8 @@
+# --
+it "record_create" do
+  user1 = user_login
+  post :record_create, params: params1.as_json, as: :json
+  assert { response.status == 200 }
+  hash = JSON.parse(response.body)
+  puts hash
+end

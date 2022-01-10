@@ -1,11 +1,13 @@
 # --
 `(yas-choose-value '(
-"[feat]"
-"[fix]"
-"[refactor]"
-"[chore]"
-"[style]"
-"[docs][ci skip] Update README"
-"[test]"
-"[perf]"
+"TODO: "
+"FIXME: 既知の不具合があるコード。修正が必要"
+"QUESTION: "
+"HACK: あまりきれいじゃないコード。リファクタリングが必要"
+"XXX: 危険！動くけどなぜうごくかわからない"
+"REVIEW: 見直す必要がある"
+"OPTIMIZE: 無駄が多く、ボトルネックになっている"
+"CHANGED: コードをどのように変更したか"
+"NOTE: なぜ、こうなったという情報を残す"
+"WARNING: "
 ))`$0

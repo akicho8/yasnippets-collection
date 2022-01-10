@@ -2,6 +2,8 @@
 `(yas-choose-value '(
 "$primary"
 "change_color($primary, $alpha: 0.5)",
+"color: change_color($primary, $lightness: 30%)"
+"background-color: change_color($primary, $lightness: 100%)"
 
 "$orange       // hsla(14,  100%, 53%, 1.0)"
 "$yellow       // hsla(48,  100%, 67%, 1.0)"

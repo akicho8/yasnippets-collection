@@ -1,0 +1,3 @@
+# --
+find(".tabs li:nth-of-type(#{index.next})").click
+find(:xpath, "//*[text()='段級']").click
