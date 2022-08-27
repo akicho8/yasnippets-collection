@@ -1,18 +1,20 @@
 # --
 `(yas-choose-value '(
+"require File.expand_path(\"../lib/legato\", __dir__)"
+"require \"pathname\""
+"require \"fileutils\""
 "require \"table_format\""
 "require \"test/unit\""
 "require \"rubygems\""
 "require \"active_support/all\""
 "require \"active_model\""
 "require \"active_record\""
-"require \"fileutils\""
-"require \"pathname\""
 "require \"kconv\""
 "require \"pp\""
-"require \"org_tp\""
+"require \"uri\""
 "require \"bundler/setup\""
 "require \"memory_record\""
 "require \"active_support/concern\""
 "require \"active_support/core_ext/string\""
+"require \"active_support/core_ext/module/attribute_accessors\""
 ))`

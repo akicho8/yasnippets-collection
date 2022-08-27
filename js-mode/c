@@ -1,20 +1,2 @@
 # --
-`(yas-choose-value '(
-"console.log"
-"console.warn"
-"console.error"
-"console.info"
-"console.table"
-"console.log(JSON.stringify())"
-"console.log(\`foo:${JSON.stringify(foo)}\`)"
-"console.profile(\"測定1\")"
-"console.profileEnd()"
-"console.dirxml(document)"
-"console.dir()"
-"console.count(\"x\")"
-"console.assert(false, \"assertion error!\")"
-"console.assertEquals(a, b)"
-"console.group(\"tag1\")"
-"console.groupEnd()"
-"console.debug('これを使うと何も表示されないので注意')"
-))`
+console.debug($0)

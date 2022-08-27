@@ -1,19 +1,18 @@
 # --
-#!/usr/bin/env ruby
-require "bundler/setup"
-Dir.chdir(Bundler.root)
+require "bundler/inline"
 
-require "thor"
-require "webdrivers"
-require "capybara/dsl"
+gemfile do
+  source "https://rubygems.org"
+  require "thor"
+end
 
-class Web < Thor
-  package_name "web"
-  default_command :validate
+class App < Thor
+  default_command :func1
   class_option :env, type: :string, desc: "対象の環境", default: "staging"
 
-  desc "validate", "validate が対象"
-  def validate
+  desc "func1 foo", "説明"
+  method_option :foo, type: :boolean, default: true, aliases: "-f", desc: "(desc)"
+  def func1
     p options[:env]
   end
 

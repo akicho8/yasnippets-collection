@@ -2,5 +2,6 @@
 require "bundler/inline"
 
 gemfile do
-  gem "graphql"
+  source "https://rubygems.org"
+  gem "thor"
 end

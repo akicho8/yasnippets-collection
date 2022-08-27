@@ -1,0 +1,14 @@
+# --
+require "open3"
+command = "ruby -v"
+stdout, stderr, status = Open3.capture3(command, stdin_data: "標準入力")
+unless status.success?
+  puts "-------------------------------------------------------------------------------- status"
+  puts status
+  puts "-------------------------------------------------------------------------------- STDERR"
+  puts stderr
+  puts "-------------------------------------------------------------------------------- STDOUT"
+  puts stdout
+end
+stdout
+

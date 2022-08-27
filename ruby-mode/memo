@@ -1,4 +1,6 @@
 # --
+return instance_variable_get("@foo") if instance_variable_defined?("@foo")
+
 def foo
   @foo ||= -> {
   }.call

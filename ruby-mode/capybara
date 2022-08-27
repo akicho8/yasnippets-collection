@@ -1,0 +1,16 @@
+# --
+require "bundler/inline"
+
+gemfile do
+  source "https://rubygems.org"
+  gem "webdrivers"
+  gem "capybara", require: "capybara/dsl"
+end
+
+Capybara.current_driver = :selenium_chrome
+
+Capybara.visit "https://www.google.co.jp/"
+Capybara.first("form input").set("foo")
+Capybara.first("form input[type=submit]").click
+
+gets

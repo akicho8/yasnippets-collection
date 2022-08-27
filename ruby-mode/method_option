@@ -1,0 +1,2 @@
+# --
+method_option :$0foo, type: :string, required: false, default: "(value)", aliases: ["-f", "--fff"], banner: "(banner)", hide: false, desc: "(desc)"

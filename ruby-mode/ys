@@ -1,0 +1,4 @@
+# --
+yield_self do
+  $0
+end

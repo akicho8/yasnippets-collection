@@ -1,0 +1,2 @@
+# --
+file = Tempfile.open(["", ".html"]) { |e| e.tap { |e| e.puts SOURCE } }.path

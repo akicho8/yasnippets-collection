@@ -1,0 +1,6 @@
+# --
+provide() {
+  return {
+    base: this,
+  }
+},

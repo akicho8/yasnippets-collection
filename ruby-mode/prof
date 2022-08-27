@@ -1,0 +1,17 @@
+# --
+block = -> { 1 + 2 }
+
+# require "stackprof"
+StackProf.run(mode: :object, out: "/tmp/stackprof-cpu.dump", &block)
+# StackProf.run(mode: :cpu, out: "stackprof.dump", raw: true) do
+# StackProf.run(mode: :object, out: "stackprof.dump", raw: true) do
+# StackProf.run(mode: :wall, out: "stackprof.dump", raw: true) do
+
+# GC.start
+# GC.disable
+# GC.enable
+# assert { ms < 1130 }
+
+Benchmark.ms(&block)            # => 790.3350000269711
+
+puts `stackprof /tmp/stackprof-cpu.dump`

@@ -1,0 +1,4 @@
+# --
+require "open3"
+o, s = Open3.capture2("factory", stdin_data: "42")
+o, e, s = Open3.capture3("factory", stdin_data: "42")

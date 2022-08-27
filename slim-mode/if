@@ -1,2 +1,2 @@
 # --
-- if $0
+template(v-if="$0")
