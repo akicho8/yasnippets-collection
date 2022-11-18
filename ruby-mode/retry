@@ -1,0 +1,5 @@
+# --
+Retryable.retryable(on: ActiveRecord::Deadlocked) do
+  # record.save!
+  # record.destroy!
+end

@@ -4,7 +4,13 @@ url.searchParams.set("foo", this.foo)
 _.each(params, (v, k) => url.searchParams.set(k, v))
 return url.toString()
 
-const params = new URLSearchParams()
-params.set("foo", this.foo)
-params.toString()  // a=1&b=2
-return MY_DOMAIN + \`/articles.json?${params}\`
+const all_params = {
+  ...this.params,
+  num: this.params.turn,
+  url: this.params.kif_url,
+}
+
+const allowed_params = Gs2.hash_slice(all_params, ...this.allowed_keys)
+const usp = new URLSearchParams()
+_.each(allowed_params, (v, k) => usp.set(k, v)) // encodeURIComponent をしてくれる
+return `${this.url_prefix}?${usp}`

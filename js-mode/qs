@@ -1,0 +1,6 @@
+# --
+const QueryString = require("query-string")
+return QueryString.stringifyUrl({
+  url: this.$config.MY_SITE_URL + "/xxx",
+  query: params,
+})
