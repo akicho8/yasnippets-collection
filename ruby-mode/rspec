@@ -1,14 +1,13 @@
 # --
-require "rspec/autorun"
-RSpec.configure do |config|
-  config.expect_with :rspec do |expectations|
-    expectations.syntax = [:should, :expect]
-  end
+if \$0 == __FILE__
+  require "rspec/autorun"
+  RSpec.configure do |config|
     config.expect_with :test_unit
-end
+  end
 
-RSpec.describe do
-  it do
-    assert { 1*2 == 3 }
+  describe do
+    it do
+      assert { 1 == 1 }
+    end
   end
 end

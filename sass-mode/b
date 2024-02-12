@@ -1,4 +1,4 @@
 # --
-border: 1px dashed change_color($primary, $alpha: 0.5)
+$0border: 1px dashed change_color($primary, $alpha: 0.5)
 border: 1px dashed $primary
 border: 1px dashed #888

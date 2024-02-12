@@ -1,14 +1,15 @@
 # --
-return instance_variable_get("@foo") if instance_variable_defined?("@foo")
-
 def foo
+  @foo.fetch(:key) { @foo[:key] = 1 }
+
+  return @foo if defined?(@foo)
+  return instance_variable_get("@foo") if instance_variable_defined?("@foo")
+
   @foo ||= -> {
+    1
   }.call
-end
 
-def foo
-  if @foo.nil?
-    @foo = Setting[:foo]
+  @foo ||= yield_self do
+    1
   end
-  @foo
 end

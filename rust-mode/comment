@@ -1,0 +1,13 @@
+# key: //
+# --
+`(yas-choose-value '(
+"//+squish: true"
+"//+oneline: true"
+"//+hidden: true"
+"//+title2: "
+"//+raw_include: path/to/file.txt"
+"//+info: "
+"//+warn: "
+"//+BEGIN_SRC"
+"//+END_SRC"
+))`

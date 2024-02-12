@@ -1,6 +1,3 @@
 # --
-`(yas-choose-value '(
-"FileUtils.mkdir_p(\"path/to\")"
-"dir_path.mkpath"
-"file_path.dirname.mkpath"
-))`
+Pathname("foo/bar").mkpath
+# Pathname("foo").rmtree rescue nil

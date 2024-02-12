@@ -1,24 +1,11 @@
 # --
-desc "説明 (例: rails grant_role ID=1)"
-task foo: :environment do |t, args|
-  p User.find(ENV.fetch("ID"))
+# rake x[production]
+# rake task1[production]
+task :x, [:foo_env] => :task1
+desc "[x] task1"
+task :task1, [:foo_env] do |_, params|
+  p params.fetch(:foo_env)
+  system %($0)
+  system <<~EOT
+  EOT
 end
-
-require "rake"
-desc "説明"
-task :foo, :v1, :v2, :v3 do |t, args|
-  t                             # => <Rake::Task foo => []>
-  args                          # => #<Rake::TaskArguments v1: 1, v2: 2>
-  args[:v1]                     # => 1
-  args[:v2]                     # => 2
-  args[:v3]                     # => nil
-  args[:v4]                     # => nil
-  args.fetch(:v4) { :none }     # => :none
-  args.v1                       # => 1
-  args.v2                       # => 2
-  args.v3                       # => nil
-  args.v4                       # => nil
-  args.to_a                     # => [1, 2]
-  args.collect{|e|e}            # => [[:v1, 1], [:v2, 2]]
-end
-Rake::Task[:foo].invoke(1, 2)

@@ -1,0 +1,2 @@
+# --
+gets.split.collect(&:to_i)

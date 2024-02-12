@@ -1,0 +1,15 @@
+# --
+$0scope :subject_eq, proc{|str|where(:subject => str)}
+scope :admin_only, where(arel_table[:admin].eq(true))
+scope :ordered, order([arel_table[:created_at].desc, arel_table[:id].desc])
+scope :group_key, proc{|v|where(arel_table[:group_key].eq(v))}
+scope :unique_key_in, proc{|v|where(arel_table[:unique_key].in(v))}
+scope :publiced, where(arel_table[:effective_flag].eq(true))
+scope :public_scoped, proc{|t|public_range(t).publiced}
+scope :public_ordered, order(arel_table[:begin_at].desc)
+scope :gmail_order, order([arel_table[:modified_at].desc, arel_table[:id].desc])
+scope :not_past, proc{|t|where(arel_table[:end_at].gt(t))}
+scope :begin_at, proc{|t|where(arel_table[:begin_at].eq(nil).or(arel_table[:begin_at].lteq(t)))}
+scope :end_at, proc{|t|where(arel_table[:end_at].eq(nil).or(arel_table[:end_at].gt(t)))}
+scope :public_range, proc{|t|begin_at(t).end_at(t)}
+scope :after_end_at_nil, where(arel_table[:after_end_at].eq(nil))

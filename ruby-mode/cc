@@ -1,0 +1,2 @@
+# --
+# -*- compile-command: "rails runner 'p 1'" -*-

@@ -1,2 +1,3 @@
 # --
+filename = Pathname(Tempfile.open(["output", ".html"]).path)
 file = Tempfile.open(["", ".html"]) { |e| e.tap { |e| e.puts SOURCE } }.path

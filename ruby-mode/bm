@@ -1,10 +1,25 @@
 # --
-require 'active_support/core_ext/benchmark'
-p Benchmark.ms { $0 }
+require "active_support/core_ext/benchmark"
+def _ = "%.1f ms" % Benchmark.ms { 100000.times { yield } }
+_ { 1 + 2 }                    # => 
 
 require "active_support/core_ext/benchmark"
-def _; "%7.2f ms" % Benchmark.ms { 1000.times { yield } } end
-_ {                        } # => " 523.48 ms"
+ms = Benchmark.ms { sleep(0.5) }
+ms = "%.2f ms" % ms
+ms # => "501.10 ms"
+
+require "benchmark"
+sec = Benchmark.realtime { sleep(0.5) }
+sec = "%.2f sec" % sec
+sec # => "0.50 sec"
+
+require "active_support/core_ext/benchmark"
+def _; "%.2f ms" % Benchmark.ms { 10.times { yield } } end
+_ { } # => "0.00 ms"
+
+require "benchmark"
+def _; "%.2f sec" % Benchmark.realtime { 10.times { yield } } end
+_ { } # => "0.00 sec"
 
 require "benchmark/ips"
 Benchmark.ips do |x|

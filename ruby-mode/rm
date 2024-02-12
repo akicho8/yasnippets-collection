@@ -1,0 +1,5 @@
+# --
+Pathname("foo").unlink          # File.unlink("foo")
+Pathname("foo").delete          # File.delete("foo")
+Pathname("foo").rmdir           # Dir.rmdir("foo")
+Pathname("foo").rmtree          # FileUtils.rm_r("foo")

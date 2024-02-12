@@ -1,2 +1,2 @@
 # --
-collect { |${1:e}| $0$1 }
+collect

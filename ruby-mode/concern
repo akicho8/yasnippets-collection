@@ -1,4 +1,7 @@
 # --
+# require "active_support/concern"
+extend ActiveSupport::Concern
+
 concern :$0 do
   included do
   end

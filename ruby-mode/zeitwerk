@@ -1,0 +1,23 @@
+# --
+require "pathname"
+require "table_format"
+require "numo/narray"
+require "numo/gnuplot"
+require "active_support/core_ext/string"
+require "memory_record"
+require "observer"
+
+module SortLogic
+  ROOT_DIR = Pathname(__dir__)
+end
+
+require "zeitwerk"
+loader = Zeitwerk::Loader.new
+loader.push_dir(__dir__)
+loader.ignore("#{__dir__}/setup.rb")
+loader.ignore("#{__dir__}/0*.rb")
+loader.ignore("#{__dir__}/sort_logic/gnuplot_patch.rb")
+loader.setup
+loader.eager_load
+
+require "./sort_logic/gnuplot_patch"

@@ -1,0 +1,9 @@
+# --
+#+hidden: true
+if \$0 == "-"
+  require "stringio"
+  $stdin = StringIO.new(<<~EOS)
+$0
+----------------------------------------
+EOS
+end

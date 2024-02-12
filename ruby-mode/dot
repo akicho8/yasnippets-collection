@@ -1,0 +1,14 @@
+# --
+#+hidden: true
+$0Open3.capture3("dot -T png -o images/image_graph_xxx1.png", stdin_data: <<~EOS)
+digraph G {
+  layout = "neato"
+  黒 -> 白
+  白 -> 黒
+  白 -> 黒[arrowhead = none]
+  白 -> 赤
+  緑 -> 青
+}
+EOS
+
+# ![](/images/xxxxxxxx/image_graph_xxx1.png)

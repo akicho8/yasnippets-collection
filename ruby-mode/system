@@ -1,14 +1,35 @@
 # --
-require "open3"
-command = "ruby -v"
-stdout, stderr, status = Open3.capture3(command, stdin_data: "標準入力")
-unless status.success?
-  puts "-------------------------------------------------------------------------------- status"
-  puts status
-  puts "-------------------------------------------------------------------------------- STDERR"
-  puts stderr
-  puts "-------------------------------------------------------------------------------- STDOUT"
-  puts stdout
-end
-stdout
+system %($0)
 
+system <<~EOT
+EOT
+
+system <<~EOT, exception: true
+true &&
+  ruby -e 'p 1; exit 0' &&
+  ruby -e 'p 2; exit 0' &&
+  true
+EOT
+
+system "sh", "-vec", <<~EOT, exception: true
+  echo 1
+  ruby -e 'exit(1)'
+  echo 2
+EOT
+
+def system!(command)
+  system "sh", "-vec", command, exception: true
+end
+
+def system!(command)
+  command.each_line(chomp: true) do |command|
+    puts "> \e[1;32m#{command}\e[m"
+    system command, exception: true
+  end
+end
+
+system! <<~EOT
+  echo A
+  ruby -e 'exit(1)'
+  echo B
+EOT
